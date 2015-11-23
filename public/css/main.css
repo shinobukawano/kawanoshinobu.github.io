@@ -1,0 +1,29 @@
+
+img.avatar {
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    height: 88px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.4),0 0 0 6px rgba(0,0,0,0.1);
+    margin: 0 3em 1em;
+}
+
+a {
+    color: #2980b9;
+}
+
+@media (min-width: 30em) {
+    img.avatar {
+        height: 100px;
+    }
+}
+
+.jp-post {
+    line-height: 1.7em;
+}
+
+@media (min-width: 30em) {
+    .jp-post {
+        font-size: .9em;
+    }
+}

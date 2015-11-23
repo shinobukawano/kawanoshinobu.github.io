@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>The source code</title>
+  <link href="../resources/prettify/prettify.css" type="text/css" rel="stylesheet" />
+  <script type="text/javascript" src="../resources/prettify/prettify.js"></script>
+  <style type="text/css">
+    .highlight { display: block; background-color: #ddd; }
+  </style>
+  <script type="text/javascript">
+    function highlight() {
+      document.getElementById(location.hash.replace(/#/, "")).className = "highlight";
+    }
+  </script>
+</head>
+<body onload="prettyPrint(); highlight();">
+  <pre class="prettyprint lang-js"><span id='Ext-ux-AccordionList'>/**
+</span> *  {@link Ext.ux.AccordionList} is a subclass of {@link Ext.Container}
+ *  Collapsible List with using Ext.data.TreeStore.
+ *  You can expand and collapse contents by header item tap.
+ *  Also it can nested infinity.
+ *
+ *  @author Shinobu Kawano &lt;http://kawanoshinobu.com&gt;
+ *
+ *  Simple example:
+ *
+ *     @example miniphone preview
+ *      var data = {
+ *         &quot;items&quot; : [{
+ *               &quot;text&quot; : &quot;Today&quot;,
+ *               &quot;items&quot; : [{
+ *                           &quot;text&quot; : &quot;Eat&quot;,
+ *                           &quot;leaf&quot; : true
+ *                       }, {
+ *                           &quot;text&quot; : &quot;Sleep&quot;,
+ *                           &quot;leaf&quot; : true
+ *                       }, {
+ *                           &quot;text&quot; : &quot;Drinking&quot;,
+ *                           &quot;leaf&quot; : true
+ *                       }]
+ *           }, {
+ *               &quot;text&quot; : &quot;Tomorrow&quot;,
+ *               &quot;items&quot; : [{
+ *                           &quot;text&quot; : &quot;Watch TV&quot;,
+ *                           &quot;leaf&quot; : true
+ *                       }, {
+ *                           &quot;text&quot; : &quot;Watch Video&quot;,
+ *                           &quot;leaf&quot; : true
+ *                       }]
+ *           }, {
+ *               &quot;text&quot; : &quot;This week&quot;,
+ *               &quot;items&quot; : [{
+ *                           &quot;text&quot; : &quot;Shopping&quot;,
+ *                           &quot;leaf&quot; : true
+ *                       }]
+ *           }, {
+ *               &quot;text&quot; : &quot;Later&quot;,
+ *               &quot;items&quot; : [{
+ *                           &quot;text&quot; : &quot;Eat&quot;,
+ *                           &quot;leaf&quot; : true
+ *                       }, {
+ *                           &quot;text&quot; : &quot;Sleep&quot;,
+ *                           &quot;leaf&quot; : true
+ *                       }, {
+ *                           &quot;text&quot; : &quot;Drinking&quot;,
+ *                           &quot;leaf&quot; : true
+ *                       }]
+ *           }]
+ *      };
+ *
+ *      Ext.define(&#39;Task&#39;, {
+ *          extend: &#39;Ext.data.Model&#39;,
+ *          config: {
+ *              fields: [{
+ *                  name: &#39;text&#39;,
+ *                  type: &#39;string&#39;
+ *              }]
+ *          }
+ *      });
+ *
+ *      var store = Ext.create(&#39;Ext.data.TreeStore&#39;, {
+ *          model: &#39;Task&#39;,
+ *          defaultRootProperty: &#39;items&#39;,
+ *          root: data
+ *      });
+ *
+ *      var accordionList = Ext.create(&#39;Ext.ux.AccordionList&#39;, {
+ *          fullscreen: true,
+ *          store: store
+ *      });
+ *
+ */
+Ext.define(&#39;Ext.ux.AccordionList&#39;, {
+    extend: &#39;Ext.NestedList&#39;,
+    xtype: &#39;accordionlist&#39;,
+    alternateClassName: &#39;Ext.AccordionList&#39;,
+
+    requires: [
+        &#39;Ext.dataview.List&#39;,
+        &#39;Ext.ux.AccordionListItem&#39;
+    ],
+
+    config: {
+<span id='Ext-ux-AccordionList-cfg-cls'>        /**
+</span>         * @cfg {String/String[]} cls
+         * The CSS class to add to this component&#39;s element.
+         */
+        cls: Ext.baseCSSPrefix + &#39;accordion-list&#39;,
+
+<span id='Ext-ux-AccordionList-cfg-headerItemCls'>        /**
+</span>         * @cfg {String} headerItemCls
+         * The CSS class to add to this header item&#39;s element.
+         */
+        headerItemCls: Ext.baseCSSPrefix + &#39;accordion-list-header&#39;,
+
+<span id='Ext-ux-AccordionList-cfg-contentItemCls'>        /**
+</span>         * @cfg {String} contentItemCls
+         * The CSS class to add to this header item&#39;s element.
+         */
+        contentItemCls: Ext.baseCSSPrefix + &#39;accordion-list-content&#39;,
+
+<span id='Ext-ux-AccordionList-cfg-layout'>        /**
+</span>         * @cfg {String/Object} layout
+         * Default layout config.
+         */
+        layout: {
+            type: &#39;fit&#39;
+        },
+
+<span id='Ext-ux-AccordionList-cfg-store'>        /**
+</span>         * @cfg {Ext.data.TreeStore/Object/String} store
+         * Store instance
+         */
+        store: null,
+
+<span id='Ext-ux-AccordionList-cfg-displayField'>        /**
+</span>         * @cfg {String} displayField
+         * Defaults template&#39;s display field.
+         */
+        displayField: &#39;text&#39;,
+
+<span id='Ext-ux-AccordionList-cfg-scrollable'>        /**
+</span>         * @cfg {Boolean} scrollable
+         * List&#39;s default listScrollable config.
+         */
+        listScrollable: true,
+
+<span id='Ext-ux-AccordionList-cfg-headerItemTpl'>        /**
+</span>         * @cfg {String} headerItemTpl
+         * Header item&#39;s html template.
+         */
+        headerItemTpl: [
+            &#39;&lt;tpl if=&quot;this.isExpanded(values)&quot;&gt;&#39;,
+            &#39;{0}&#39;,
+            &#39;&lt;tpl else&gt;&#39;,
+            &#39;{1}&#39;,
+            &#39;&lt;/tpl&gt;&#39;
+        ].join(&#39;&#39;),
+
+<span id='Ext-ux-AccordionList-cfg-headerCloseTpl'>        /**
+</span>         * @cfg {String} headerCloseTpl
+         * Header item&#39;s html template which it closing.
+         */
+        headerCloseTpl: &#39;&lt;div class=&quot;right&quot;&gt;&lt;/div&gt;&lt;div&gt;{0}&lt;/div&gt;&#39;,
+
+<span id='Ext-ux-AccordionList-cfg-headerOpenTpl'>        /**
+</span>         * @cfg {String} headerOpenTpl
+         * Header item&#39;s html template which it opening.
+         */
+        headerOpenTpl: &#39;&lt;div class=&quot;down&quot;&gt;&lt;/div&gt;&lt;div&gt;{0}&lt;/div&gt;&#39;,
+
+<span id='Ext-ux-AccordionList-cfg-contentItemTpl'>        /**
+</span>         * @cfg {String} contentItemTpl
+         * Content item&#39;s html template.
+         */
+        contentItemTpl: &#39;{0}&#39;,
+
+<span id='Ext-ux-AccordionList-cfg-countTpl'>        /**
+</span>         * @cfg {String} countTpl
+         * Content item count html template.
+         */
+        countTpl: [
+            &#39;&lt;div class=&quot;&#39;, Ext.baseCSSPrefix, &#39;accordion-list-count&quot; &#39;,
+            &#39;style=&quot;position:absolute; right:0; margin-right: 1em;&quot;&gt;&#39;,
+            &#39;{0}&#39;,
+            &#39;&lt;/div&gt;&#39;
+        ].join(&#39;&#39;),
+
+<span id='Ext-ux-AccordionList-cfg-defaultExpanded'>        /**
+</span>         * @cfg {Boolean} defaultExpanded
+         * Whether items all expanded or not.
+         */
+        defaultExpanded: false,
+
+<span id='Ext-ux-AccordionList-cfg-useSelectedHighlights'>        /**
+</span>         * @cfg {Boolean} useSelectedHighlights
+         * Whether selected items highlights or not.
+         */
+        useSelectedHighlights: true,
+
+<span id='Ext-ux-AccordionList-cfg-singleMode'>        /**
+</span>         * @cfg {Boolean} singleMode
+         * Whether to only show one expanded list at a time.
+         */
+        singleMode: false,
+
+<span id='Ext-ux-AccordionList-cfg-animation'>        /**
+</span>         * @cfg {Boolean} animation
+         * Whether to use animation when item is expanded.
+         */
+        animation: false,
+
+<span id='Ext-ux-AccordionList-cfg-animationDuration'>        /**
+</span>         * @cfg {Number} animationDuration
+         * Animation duration time (ms). This is used when item expand.
+         */
+        animationDuration: 800,
+
+<span id='Ext-ux-AccordionList-cfg-showCount'>        /**
+</span>         * @cfg {Boolean} showCount
+         * Whether to show item&#39;s count in the header.
+         */
+        showCount: false,
+
+<span id='Ext-ux-AccordionList-cfg-list'>        /**
+</span>         * @private
+         */
+        list: null,
+
+<span id='Ext-ux-AccordionList-cfg-listConfig'>        /**
+</span>         * @cfg {Object} listConfig
+         * Sets list&#39;s config.
+         */
+        listConfig: {},
+
+<span id='Ext-ux-AccordionList-cfg-indent'>        /**
+</span>         * @cfg {Boolean} indent
+         * Whether to indent child items.
+         */
+        indent: false,
+
+<span id='Ext-ux-AccordionList-cfg-indent'>        /**
+</span>         * @cfg {Boolean} indent
+         * Flag the use a component based DataView implementation.
+         */
+        useComponents: false,
+
+<span id='Ext-ux-AccordionList-cfg-indent'>        /**
+</span>         * @cfg {String} indent
+         * The xtype used for the component based DataView.
+         * You must specify accordionlistitem&#39;s sub class.
+         */
+        defaultType: &#39;accordionlistitem&#39;,
+
+<span id='Ext-ux-AccordionList-cfg-indexBar'>        /**
+</span>         * @cfg {Boolean/Object} indexBar
+         * `true` to render an alphabet IndexBar docked on the right.
+         * This can also be a config object that will be passed to {@link Ext.IndexBar}.
+         */
+        indexBar: null,
+
+<span id='Ext-ux-AccordionList-cfg-toolbar'>        toolbar: {
+</span>            hidden: true
+        }
+    },
+
+<span id='Ext-ux-AccordionList-method-initialize'>    /**
+</span>     * @protected
+     */
+    initialize: function() {
+        var me = this;
+        me.doInitialize();
+        me.callParent(arguments);
+    },
+
+<span id='Ext-ux-AccordionList-method-doInitialize'>    /**
+</span>     * @private
+     */
+    doInitialize: function() {
+        var me = this;
+        if (me.getDefaultExpanded()) {
+            me.doAllExpand();
+        }
+    },
+
+<span id='Ext-ux-AccordionList-method-applyStore'>    /**
+</span>     * @override
+     * @protected
+     */
+    applyStore: function(newStore) {
+        return this.patchStore(newStore);
+    },
+
+<span id='Ext-ux-AccordionList-method-applyDisplayField'>    /**
+</span>     * @protected
+     */
+    applyDisplayField: function(newField) {
+        return &#39;{&#39; + newField + &#39;}&#39;;
+    },
+
+<span id='Ext-ux-AccordionList-method-updateStore'>    /**
+</span>     * @override
+     * @protected
+     */
+    updateStore: function(newStore, oldStore) {
+        var me = this,
+            list = me.getList();
+
+        if (!list) {
+            list = me.readyList();
+        }
+
+        newStore.on(&#39;load&#39;, me.onLoadStore, me);
+        list.setStore(newStore);
+    },
+
+<span id='Ext-ux-AccordionList-method-readyList'>    /**
+</span>     * @private
+     * @return {Ext.dataview.List}
+     */
+    readyList: function() {
+        var me = this,
+            config = me.makeListConfig(),
+            list;
+
+        list = Ext.create(&#39;Ext.dataview.List&#39;, config);
+
+        me.applyMoreListSetting(list);
+        me.setList(list);
+        me.add(list);
+        return list;
+    },
+
+<span id='Ext-ux-AccordionList-method-makeListConfig'>    /**
+</span>     * @private
+     * @return {Object}
+     */
+    makeListConfig: function() {
+        var me = this,
+            defaultConfig = {
+                scrollToTopOnRefresh: false
+            },
+            config;
+
+        if (me.getUseComponents() === false) {
+            config = me.makeElementListConfig(defaultConfig);
+        }
+        else {
+            config = me.makeComponentListConfig(defaultConfig);
+        }
+
+        if (me.getAnimation()) {
+            Ext.Object.merge(config, {
+                itemHeight: &#39;auto&#39;
+            });
+        }
+
+        var indexBar = me.getIndexBar();
+        if (!Ext.isEmpty(indexBar)) {
+            Ext.Object.merge(config, {
+                indexBar: indexBar,
+                grouped : true
+            });
+        }
+
+        Ext.Object.merge(config, me.getListConfig());
+
+        return config;
+    },
+
+<span id='Ext-ux-AccordionList-method-makeElementListConfig'>    /**
+</span>     * @private
+     * @param  {Object} config
+     * @return {Object}
+     */
+    makeElementListConfig: function(config) {
+        var me = this;
+
+        Ext.Object.merge(config, {
+            itemTpl: new Ext.XTemplate(
+                &#39;&lt;tpl if=&quot;leaf&quot;&gt;&#39;,
+                    me.makeContentTemplate(),
+                &#39;&lt;tpl else&gt;&#39;,
+                    me.makeHeaderTemplate(),
+                    me.getShowCount() ? me.makeCountTpl() : &#39;&#39;,
+                &#39;&lt;/tpl&gt;&#39;,
+                {
+                    isExpanded: function(values) {
+                        return values.expanded;
+                    }
+                }
+            ),
+                useSimpleItems: true
+            }
+        );
+
+        return config;
+    },
+
+<span id='Ext-ux-AccordionList-method-makeComponentListConfig'>    /**
+</span>     * @private
+     * @param  {Object} config
+     * @return {Object}
+     */
+    makeComponentListConfig: function(config) {
+        var me = this;
+
+        Ext.Object.merge(config, {
+            useComponents: true,
+            defaultType: me.getDefaultType(),
+            itemTpl: &#39;&#39;,
+            useSimpleItems: false
+        });
+
+        return config;
+    },
+
+<span id='Ext-ux-AccordionList-method-applyMoreListSetting'>    /**
+</span>     * @private
+     * @param  {Ext.dataview.List} list
+     */
+    applyMoreListSetting: function(list) {
+        var me = this;
+
+        if (me.getUseSelectedHighlights() === false) {
+            list.setSelectedCls(&#39;&#39;);
+        }
+
+        if (me.getUseComponents()) {
+            me.applyItemTapPatch(list);
+        }
+
+        list.on(&#39;itemtap&#39;, me.onItemTap, me);
+        list.on(&#39;refresh&#39;, me.onListRefresh, me);
+        list.on(&#39;itemindexchange&#39;, me.onItemIndexChange, me);
+        list.setScrollable(me.getListScrollable());
+    },
+
+<span id='Ext-ux-AccordionList-method-applyItemTapPatch'>    /**
+</span>     * @private
+     * @param  {Ext.dataview.List} list
+     */
+    applyItemTapPatch: function (list) {
+        var parseEvent = function (e) {
+            var me = this,
+                target = Ext.fly(e.getTarget()).findParent(&#39;.&#39; + &#39;accordion-list-item&#39;, 8),
+                item = Ext.getCmp(target.id);
+
+            return [me, item, item.$dataIndex, e];
+        };
+        list.parseEvent = parseEvent;
+
+        list.on({
+            element: &#39;element&#39;,
+            delegate: &#39;.accordion-list-item&#39;,
+            tap: list.onItemTap
+        });
+    },
+
+<span id='Ext-ux-AccordionList-method-onLoadStore'>    /**
+</span>     * @private
+     * @param  {Ext.data.Store} store
+     * @param  {Ext.data.Model} records
+     * @param  {Boolean} successful
+     */
+    onLoadStore: function(store, records, successful) {
+        if (successful === false) {
+            return;
+        }
+        this.setCountToRecords(records);
+    },
+
+<span id='Ext-ux-AccordionList-method-setCountToRecords'>    /**
+</span>     * @private
+     * @param  {Ext.data.Model} records
+     */
+    setCountToRecords: function(records) {
+        var me = this;
+
+        (records || []).forEach(function setCount(record) {
+            if (record.hasChildNodes()) {
+                record.set(&#39;cnt&#39;, record.childNodes.length);
+                record.childNodes.forEach(setCount);
+            }
+            else {
+                record.set(&#39;cnt&#39;, 0);
+            }
+        });
+    },
+
+<span id='Ext-ux-AccordionList-method-makeHeaderTemplate'>    /**
+</span>     * @private
+     * @return {String}
+     */
+    makeHeaderTemplate: function() {
+        var me = this,
+            displayField = me.getDisplayField(),
+            openTpl = Ext.String.format(me.getHeaderOpenTpl(), displayField),
+            closeTpl = Ext.String.format(me.getHeaderCloseTpl(), displayField);
+        return Ext.String.format(me.getHeaderItemTpl(), openTpl, closeTpl);
+    },
+
+<span id='Ext-ux-AccordionList-method-makeContentTemplate'>    /**
+</span>     * @private
+     * @return {String}
+     */
+    makeContentTemplate: function() {
+        var me = this,
+            displayField = me.getDisplayField();
+        return Ext.String.format(me.getContentItemTpl(), displayField);
+    },
+
+<span id='Ext-ux-AccordionList-method-makeCountTpl'>    /**
+</span>     * @private
+     * @return {String}
+     */
+    makeCountTpl: function() {
+        return Ext.String.format(this.getCountTpl(), &#39;{cnt}&#39;);
+    },
+
+<span id='Ext-ux-AccordionList-method-updateListScrollable'>     /**
+</span>     * @private
+     */
+    updateListScrollable: function(newListScrollable, oldListScrollable) {
+        var list = this.getList();
+        if (list) {
+            list.setScrollable(newListScrollable);
+        }
+    },
+
+<span id='Ext-ux-AccordionList-method-load'>    /**
+</span>     * Loads data into the store.
+     */
+    load: function() {
+        this.getStore().load();
+    },
+
+<span id='Ext-ux-AccordionList-method-removeAllItem'>    /**
+</span>     * Remove all items from the store.
+     */
+    removeAllItem: function() {
+        this.getStore().removeAll();
+    },
+
+<span id='Ext-ux-AccordionList-method-getCount'>    /**
+</span>     * Gets the number of cached records.
+     * @return {Number}
+     */
+    getCount: function() {
+        var store = this.getStore();
+        return Ext.isEmpty(store) ? 0 : store.getCount();
+    },
+
+<span id='Ext-ux-AccordionList-method-getAllCount'>    /**
+</span>     * Gets the number of all records.
+     * @return {Number}
+     */
+    getAllCount: function() {
+        var store = this.getStore();
+        return Ext.isEmpty(store) ? 0 : store.getAllCount();
+    },
+
+<span id='Ext-ux-AccordionList-method-doAllExpand'>    /**
+</span>     * Expand all of contents.
+     */
+    doAllExpand: function() {
+        var me = this;
+        me.doAll(function expand(node) {
+            if (me.getAnimation()) {
+                me.addListExpandListeners(node);
+            }
+            node.expand();
+            if (!node.isLeaf()) {
+                node.childNodes.forEach(expand, me);
+            }
+        });
+    },
+
+<span id='Ext-ux-AccordionList-method-doAllCollapse'>    /**
+</span>     * Collapse all of contents.
+     */
+    doAllCollapse: function() {
+        var me = this;
+        me.doAll(function collapse(node) {
+            node.collapse();
+            if (!node.isLeaf()) {
+                node.childNodes.forEach(collapse, me);
+            }
+        });
+    },
+
+<span id='Ext-ux-AccordionList-method-doAllCollapseWithSingleMode'>    /**
+</span>     * Collapse all of contents with single mode.
+     * @param  {Number} depth
+     */
+    doAllCollapseWithSingleMode: function(depth) {
+        var me = this;
+        me.doAll(function collapse(node) {
+            if (node.data.depth === depth) {
+                node.collapse();
+            }
+        });
+    },
+
+<span id='Ext-ux-AccordionList-method-doAll'>    /**
+</span>     * @private
+     * @param  {Function} updater
+     */
+    doAll: function(updater) {
+        var me = this,
+            list = me.getList(),
+            store = list.getStore();
+        store.each(updater, me);
+    },
+
+<span id='Ext-ux-AccordionList-method-onListRefresh'>    /**
+</span>     * @private
+     * @param  {Ext.dataview.List} list
+     */
+    onListRefresh: function(list) {
+        var me = this,
+            items = list.listItems,
+            ln = items.length,
+            headerCls = me.getHeaderItemCls(),
+            contentCls = me.getContentItemCls(),
+            i, item, record, isLeaf;
+
+        for (i = 0; i &lt; ln; i++) {
+            item = items[i];
+            record = item.getRecord();
+            if (!Ext.isEmpty(record)) {
+                isLeaf = record.get(&#39;leaf&#39;);
+                item.removeCls(isLeaf ? headerCls : contentCls);
+                item.addCls(isLeaf ? contentCls : headerCls);
+            }
+        }
+
+        if (me.getIndent()) {
+            me.doIndent();
+        }
+    },
+
+<span id='Ext-ux-AccordionList-method-onItemTap'>    /**
+</span>     * Called when an list item has been tapped
+     * @param  {Ext.List} list The subList the item is on
+     * @param  {Number} index The id of the item tapped
+     * @param  {Ext.Element} target The list item tapped
+     * @param  {Ext.data.Record} record The record whichw as tapped
+     * @param  {Ext.event.Event} e The event
+     */
+    onItemTap: function(list, index, target, record, e) {
+        var me = this,
+            store = list.getStore(),
+            node = store.getAt(index);
+
+        if (me.getAnimation()) {
+            me.scrollToSelectedItem();
+            me.readyAnimation(list, index, target, record, e);
+        }
+
+        // if any of the event handlers return &#39;false&#39;, we cancel processing of the tap
+        var ret = me.fireEvent(&#39;itemtap&#39;, me, list, index, target, record, e);
+        if (ret === false) {
+            return;
+        }
+
+        if (node.isLeaf()) {
+            me.fireEvent(&#39;leafitemtap&#39;,
+                list, index, target, record, e);
+        }
+        else {
+            if (node.isExpanded()) {
+                node.collapse();
+            }
+            else {
+                if(me.getSingleMode()) {
+                    me.doAllCollapseWithSingleMode(record.data.depth);
+                }
+                node.expand();
+            }
+        }
+
+        if (me.getIndent()) {
+            me.doIndent();
+        }
+    },
+
+<span id='Ext-ux-AccordionList-method-onItemIndexChange'>    /**
+</span>     * @protected
+     * @param  {Ext.dataview.List} list
+     * @param  {Ext.data.Record} record
+     * @param  {Number} index
+     */
+    onItemIndexChange: function(list, record, index) {
+        var me = this;
+        if (me.getIndent()) {
+            me.doIndent();
+        }
+    },
+
+<span id='Ext-ux-AccordionList-method-scrollToSelectedItem'>    /**
+</span>     * @private
+     * http://siva-technology.blogspot.pt/2013/03/sencha-touch-scroll-to-selected-item-on.html
+     * Position list item
+     */
+    scrollToSelectedItem: function() {
+        var me = this,
+            list = me.getList(),
+            store = list.getStore(),
+            selected = list.getSelection()[0],
+            idx = store.indexOf(selected),
+            map = list.getItemMap(),
+            offset = map.map[idx];
+
+        list.getScrollable().getScroller().scrollTo(0, offset);
+    },
+
+<span id='Ext-ux-AccordionList-method-readyAnimation'>    /**
+</span>     * @private
+     * @param  {Ext.dataview.List} list
+     * @param  {Number} index
+     * @param  {Ext.Element} target
+     * @param  {Ext.data.Record} record
+     */
+    readyAnimation : function(list, index, target, record){
+        var me = this,
+            id = record.getId();
+
+        var parentItem = list.getStore().getAt(index);
+        me.addListExpandListeners(parentItem);
+    },
+
+<span id='Ext-ux-AccordionList-method-addListExpandListeners'>    /**
+</span>     * @private
+     * @param  {Ext.data.Model} parent
+     */
+    addListExpandListeners: function(parent) {
+        var me = this;
+
+        me.loadedTaps = me.loadedTaps || {};
+
+        if (me.loadedTaps[parent.id]) {
+            return;
+        }
+        else {
+            me.loadedTaps[parent.id] = true;
+        }
+
+        parent.setListeners({
+            expand: me.onExpandWithAnimation,
+            scope: me
+        });
+    },
+
+<span id='Ext-ux-AccordionList-method-onExpandWithAnimation'>    /**
+</span>     * @private
+     * @param  {Ext.data.Model} parent
+     */
+    onExpandWithAnimation: function(parent) {
+        var me = this,
+            list = me.getList();
+
+        Ext.each(parent.childNodes, function(el) {
+            var item = list.getItemAt(list.getStore().indexOf(el));
+            item.hide();
+            if (el.get(&#39;expanded&#39;)){
+                me.addListExpandListeners(item, list);
+                el.collapse();
+                el.expand();
+            }
+        });
+
+        Ext.each(parent.childNodes, function(el){
+            var item = list.getItemAt(list.getStore().indexOf(el));
+            try {
+                item.show({
+                    easing: &#39;easeInOut&#39;,
+                    duration: me.getAnimationDuration(),
+                    autoClear: true,
+                    from: {
+                        opacity: 0,
+                        height:&#39;0px&#39;
+                    },
+                    to: {
+                        opacity: 1,
+                        height:&#39;51px&#39;
+                    }
+                });
+            } catch(e) {}
+        });
+    },
+
+<span id='Ext-ux-AccordionList-method-doIndent'>    /**
+</span>     * @private
+     */
+    doIndent: function() {
+        var me = this,
+            list = me.getList();
+
+        var items = list.listItems,
+            ln = items.length,
+            i, item, record, elem, indent;
+
+        for (i = 0; i &lt; ln; i++) {
+            item = items[i];
+            record = item.getRecord();
+            if (!Ext.isEmpty(record)) {
+                elem = item.element.down(&#39;.x-innerhtml&#39;);
+                indent = ((record.getDepth() + 0.5) -1) + &#39;em&#39;;
+                // 2.1
+                // elem = item.element.down(&#39;.x-list-item-body .x-innerhtml&#39;);
+                // indent = ((record.getDepth()) -1) + &#39;em&#39;;
+                elem.dom.style.setProperty(&#39;padding-left&#39;, indent);
+            }
+        }
+    },
+
+<span id='Ext-ux-AccordionList-method-patchStore'>    /**
+</span>     * HACK: See. Can not able to load json data in Sencha touch 2.1 Accordionlist
+     *       http://www.sencha.com/forum/showthread.php?253032-Can-not-able-to-load-json-data-in-Sencha-touch-2.1-Accordionlist
+     * @private
+     * @param  {Ext.data.TreeStore/Object/String} store
+     * @return {Ext.data.TreeStore}
+     */
+    patchStore: function(store) {
+        var me = this;
+
+        if (store) {
+            if (Ext.isString(store)) {
+                // store id
+                store = Ext.data.StoreManager.get(store);
+            } else {
+                // store instance or store config
+                if (!(store instanceof Ext.data.TreeStore)) {
+                    store = Ext.factory(store, Ext.data.TreeStore, null);
+                }
+            }
+        }
+
+        if (!store.isStore) {
+            console.error(&#39;You should set a store id, a store config or an instance of Ext.data.TreeStore to `store` config&#39;);
+            return;
+        }
+
+        store.on(&#39;addrecords&#39;, function(store, records) {
+            // fix sort order if we add children to a already loaded treestore
+            if (!records[0].parentNode.isRoot()) {
+                // we have to fix the sort order of the items and the data array
+                store.getData().items = me.fixTreeStoreSortOrder(store.getData().items, records);
+                store.getData().all = me.fixTreeStoreSortOrder(store.getData().all, records);
+                store.fireEvent(&#39;refresh&#39;, store, store.data);
+            }
+        });
+
+        store.onProxyLoad = function(operation) {
+            var records = operation.getRecords(),
+                successful = operation.wasSuccessful(),
+                node = operation.getNode();
+
+            me.loadedTaps = {}; // Reset
+
+            node.beginEdit();
+            node.set(&#39;loading&#39;, false);
+            if (successful) {
+                records = this.fillNode(node, records);
+            }
+            node.endEdit();
+            // we only have to call this once to get an addrecords ev
+            if (node.isRoot()) {
+                this.updateNode(node);
+            }
+            this.loading = false;
+            this.loaded = true;
+
+            // Model event
+            node.fireEvent(&#39;load&#39;, node, records, successful);
+            // Store event
+            this.fireEvent(&#39;load&#39;, this, records, successful, operation);
+            // Ext.ux.AccordionList event
+            me.fireEvent(&#39;load&#39;, this, records, successful, operation);
+
+            // this is a callback that would have been passed to the &#39;read&#39; function and is
+            // optional
+            Ext.callback(operation.getCallback(), operation.getScope() ||
+                me, [records, operation, successful]);
+        };
+
+        store.setClearOnLoad(false);
+
+        if (store.getAutoLoad()) {
+            Ext.defer(function() {
+                var list = this.getList(),
+                    tmp = list.getLoadingText();
+                list.setLoadingText(null);
+                store.load();
+                list.setLoadingText(tmp);
+            }, 500, this);
+        }
+        return store;
+    },
+
+<span id='Ext-ux-AccordionList-method-fixTreeStoreSortOrder'>    /**
+</span>     * @private
+     * @param  {Ext.data.TreeStore} store
+     * @param  {Array} allRecords | of store&#39;s data or items array
+     * @param  {Array} newRecords | new loaded children of node
+     * @return {Array}            | correct sort order
+     */
+    fixTreeStoreSortOrder: function(allRecords, newRecords) {
+        var store = this.getStore(),
+            moveRecords = [],
+            parentIndex = Ext.Array.indexOf(allRecords, newRecords[0].parentNode),
+            firstRecordIndex = Ext.Array.indexOf(allRecords, newRecords[0]);
+
+        // assume all records have the same parent because we&#39;re expanding one node
+        if (parentIndex + 1 !== firstRecordIndex) {
+            moveRecords = Ext.Array.splice(allRecords, allRecords.length - newRecords.length, newRecords.length);
+            return Ext.Array.insert(allRecords, parentIndex + 1, moveRecords);
+        } else {
+            return allRecords;
+        }
+    }
+
+});
+</pre>
+</body>
+</html>

@@ -1,0 +1,48 @@
+---
+layout: default
+title: Home
+---
+
+<div class="posts">
+  {% for post in paginator.posts %}
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/{{ post.url | remove_first:'/' }}">
+        {{ post.title }}
+      </a>
+    </h1>
+
+    <span class="post-date">{{ post.date | date_to_string }}</span>
+
+      <span class="{{ post.css }}">
+        {{ post.content | split:"<!-- more -->" | first | strip_html | truncate:300 }}
+        {% if post.content | size > 300 %}
+            <strong>Read more</strong>
+        {% endif %}
+      </span>
+  </div>
+  {% endfor %}
+</div>
+
+<!-- <a href="http://bit.ly/1F5xWm7" target="_blank">
+    <img src="{{ site.baseurl }}public/images/packt-201505.png" alt="" width="300"/>
+    <div>DAY AGAINST DRM</div>
+</a> -->
+
+<div class="pagination">
+  {% if paginator.next_page %}
+    <a class="pagination-item older" href="{{ site.baseurl }}page{{paginator.next_page}}">Older</a>
+  {% else %}
+    <span class="pagination-item older">Older</span>
+  {% endif %}
+  {% if paginator.previous_page %}
+    {% if paginator.page == 2 %}
+      <a class="pagination-item newer" href="{{ site.baseurl }}">Newer</a>
+    {% else %}
+      <a class="pagination-item newer" href="{{ site.baseurl }}page{{paginator.previous_page}}">Newer</a>
+    {% endif %}
+  {% else %}
+    <span class="pagination-item newer">Newer</span>
+  {% endif %}
+</div>
+

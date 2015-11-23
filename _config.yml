@@ -1,0 +1,23 @@
+# Dependencies
+markdown:         redcarpet
+# pygments:         true
+
+# Permalinks
+# permalink:        pretty
+permalink   : :year/:month/:title/
+highlighter : pygments
+
+# Setup
+title:            Shinobu Kawano
+tagline:          'Loves writing code, talking with people, traveling the world. ✈✈'
+description:      "Hi, there! I'm Shinobu Kawano, JavaScript programmer based in Tokyo. Currently, I'm working for Canon IT Solutions Inc. as a sales engineer of <a href='http://www.sencha.com/' target='_blank'>Sencha</a> featured system development. <br>In my spare time, I hack an open source software and record a podcast (my program is <a href='http://senchacasts.fm/' target='_blank'>here</a>)."
+
+url:              http://kawanoshinobu.com
+baseurl:          '/'
+paginate:         5
+
+author:
+  name:           'KAWANO Shinobu'
+  url:            http://kawanoshinobu.com
+
+exclude: ["vendor",".rbenv-version", ".gitignore", "README.md", "Gemfile", "Gemfile.lock", "Procfile", "unicorn.rb", "config.ru"]
