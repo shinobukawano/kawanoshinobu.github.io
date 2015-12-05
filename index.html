@@ -16,7 +16,11 @@ is_top: true
     <span class="post-date">{{ post.date | date_to_string }}</span>
 
       <span class="{{ post.css }}">
-        {{ post.content | split:"<!-- more -->" | first | strip_html | truncate:300 }}
+        {% if post.css == "jp-post" %}
+            {{ post.content | split:"<!-- more -->" | first | strip_html | truncate:200 }}
+        {% else %}
+            {{ post.content | split:"<!-- more -->" | first | strip_html | truncate:300 }}
+        {% endif %}
         {% if post.content | size > 300 %}
             <strong>Read more</strong>
         {% endif %}
