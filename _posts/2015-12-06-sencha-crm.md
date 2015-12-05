@@ -19,7 +19,7 @@ ogimage: crm-v01-hero
 <a href="https://github.com/kawanoshinobu/SenchaCRM" target="_blank">https://github.com/kawanoshinobu/SenchaCRM</a>  
 * Herokuボタンを付けたので、ワンクリックでご自身のHerokuアカウントにアプリをデプロイできます。
 
-<img src="/public/images/crm-v01-hero.png" style="width:80%"/>
+<img src="/public/images/crm-v01-hero.jpg" style="width:80%"/>
 
 # Some useful tips on Ext JS 6
 
