@@ -27,4 +27,25 @@
 
   <!-- RSS -->
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+
+  <!-- Social -->
+  {% if page.is_top %}
+      <meta property="og:type" content="website" />
+      <meta property="og:description" content="{{ site.tagline }}" />
+    {% else %}
+      <meta property="og:type" content="article" />
+      <meta property="og:title" content="{{ page.title }}" />
+      <meta property="og:description" content="{{ page.content | markdownify | strip_html | strip_newlines | truncate: 50}}" />
+    {% endif %}
+
+    <meta property="og:site_name" content="{{ site.title }}" />
+    <meta property="og:url" content="http://kawanoshinobu.com{{ page.url }}" />
+    {% if page.ogimage %}
+      <meta property="og:image" content="http://kawanoshinobu.com/public/images/{{ page.ogimage }}.jpg" />
+    {% else %}
+      <meta property="og:image" content="http://kawanoshinobu.com/public/images/kawanoshinobu.jpg" />
+    {% endif %}
+    {% if page.date %}
+      <meta property="article:published_time" content="{{page.date}}"/>
+    {% endif %}
 </head>

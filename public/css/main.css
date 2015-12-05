@@ -22,8 +22,16 @@ a {
     line-height: 1.7em;
 }
 
+.jp-post h1 {
+    font-size: 32px
+}
+
 @media (min-width: 30em) {
     .jp-post {
         font-size: .9em;
     }
+}
+
+.post-title {
+    font-size: 32px
 }

@@ -27,3 +27,6 @@ author:
   url: http://kawanoshinobu.com
 
 exclude: ["vendor",".rbenv-version", ".gitignore", "README.md", "Gemfile", "Gemfile.lock", "Procfile", "unicorn.rb", "config.ru"]
+
+# Misc
+future: true
