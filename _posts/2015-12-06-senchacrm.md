@@ -6,15 +6,17 @@ css: jp-post
 ogimage: crm-v01-hero
 ---
 
-なんだか毎年、アウェイな気分でアドベントカレンダーに参加しています、川野です ^^;   
-<a href="http://www.adventar.org/calendars/1041" target="_blank">Sencha Advent Calendar 2015</a> 6日目を担当しますので、よろしくお願いします。
+<!-- なんだか毎年、アウェイな気分でアドベントカレンダーに参加しています、川野です ^^;   
+<a href="http://www.adventar.org/calendars/1041" target="_blank">Sencha Advent Calendar 2015</a> - 6日目を担当しますので、よろしくお願いします。 -->
 
-11月に数日間、自由に使える日があったので、Ext JS 6の勉強も兼ねて簡単なSenchaアプリを作りました。 シンプルなCRUD機能を持つユニバーサルアプリで、PostgreSQLにデータを永続化します。
+これは <a href="http://www.adventar.org/calendars/1041" target="_blank">Sencha Advent Calendar 2015</a> の6日目の記事です。
+
+11月に数日間、自由に使える日があったので、Ext JS 6の勉強も兼ねてちょっとしたSenchaアプリを作りました。 シンプルなCRUD機能を持つユニバーサル（デスクトップ + モバイル）アプリで、PostgreSQLにデータを永続化します。
 動きは下記の動画をご覧ください。
 
 <iframe src="https://player.vimeo.com/video/147315133" width="500" height="323" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
-そのままお蔵入りにしても良かったのですが、もしかしたら誰かの役に立つかもしれないと思い、ソースコードをGitHubで公開しました。READMEの手順に従えば、お手元のPCでアプリを動かすことができるかと思います。
+そのままお蔵入りにしても良かったのですが、もしかしたら誰かの役に立つかもしれないと思い、ソースコードをGitHubで公開しました。READMEの手順に従えば、手元のPCでアプリを動かすことができるかと思います。
 
 <a href="https://github.com/kawanoshinobu/SenchaCRM" target="_blank">https://github.com/kawanoshinobu/SenchaCRM</a>  
 * Herokuボタンを付けたので、ワンクリックでご自身のHerokuアカウントにアプリをデプロイできます。
@@ -25,13 +27,13 @@ ogimage: crm-v01-hero
 
 これだけだと宣伝みたいなので、Ext JS 6でデモアプリを作る過程で気づいた技術的なTipsを何点か共有します。
 
-### 1. lookup
+### 1. lookupメソッド
 
 Ext JS 5でViewControllerクラスが追加され、そのスコープではコンポーネントを`reference`という識別子を利用して取得できるようになりました。
 
 ただ、このreferenceでコンポーネントを取得するためのメソッドが`lookupReference`という名前でかなり長い。これはタイプ数が多いですし、間違えます。
 
-Ext JS 6では`lookupReference`のショートハンドとして`lookup`が追加されました。下記は利用例です。
+Ext JS 6では`lookupReference`のショートハンドとして`lookup`メソッドが追加されました。下記はその利用例です。
 
     // SenchaCRM/src/main/resources/public/app/view/people/Controller.js
     onSaveFormButtonClick: function () {
@@ -48,11 +50,11 @@ Ext JS 6では`lookupReference`のショートハンドとして`lookup`が追�
         });
         ...
 
-いい感じです。
+`lookupReference`はよく使う機能なので、記述が楽になるのは嬉しいです。
 
-### 2. Ext.all & Ext.first
+### 2. Ext.all & Ext.firstメソッド
 
-「タイプ数が多い」というと`Ext.ComponentQuery.query`が思い浮かびます。
+「タイプ数が多い」というと`Ext.ComponentQuery.query`メソッドも一緒でしょう。
 `Ext.ComponentQuery.query`はグローバルのスコープでコンポーネントを取得する手段ですが、これも「タイプ数が多い」とコミュニティで不評だった記憶があります。
 
 Ext JS 6では、やっと便利なショートハンドができました。`Ext.all`が`Ext.ComponentQuery.query`のショートハンドになっています。
