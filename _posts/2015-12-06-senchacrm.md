@@ -14,7 +14,7 @@ ogimage: crm-v01-hero
 
 <iframe src="https://player.vimeo.com/video/147315133" width="500" height="323" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
-そのままお蔵入りにしても良かったのですが、もしかしたら誰かの役に立つかもしれないと思い、ソースコードをGitHubで公開しました。READMEの手順に従えば、ローカルPCでアプリを動かすことができるかと思います。
+そのままお蔵入りにしても良かったのですが、もしかしたら誰かの役に立つかもしれないと思い、ソースコードをGitHubで公開しました。READMEの手順に従えば、お手元のPCでアプリを動かすことができるかと思います。
 
 <a href="https://github.com/kawanoshinobu/SenchaCRM" target="_blank">https://github.com/kawanoshinobu/SenchaCRM</a>  
 * Herokuボタンを付けたので、ワンクリックでご自身のHerokuアカウントにアプリをデプロイできます。
@@ -25,7 +25,7 @@ ogimage: crm-v01-hero
 
 これだけだと宣伝みたいなので、Ext JS 6でデモアプリを作る過程で気づいた技術的なTipsを何点か共有します。
 
-### lookupメソッド
+### 1. lookup
 
 Ext JS 5でViewControllerクラスが追加され、そのスコープではコンポーネントを`reference`という識別子を利用して取得できるようになりました。
 
@@ -48,6 +48,10 @@ Ext JS 6では`lookupReference`のショートハンドとして`lookup`が追�
         });
         ...
 
+いい感じです。
+
+### 2. Ext.all & Ext.first
+
 「タイプ数が多い」というと`Ext.ComponentQuery.query`が思い浮かびます。
 `Ext.ComponentQuery.query`はグローバルのスコープでコンポーネントを取得する手段ですが、これも「タイプ数が多い」とコミュニティで不評だった記憶があります。
 
@@ -64,7 +68,7 @@ Ext JS 6では、やっと便利なショートハンドができました。`Ex
 
 スッキリして、いいですね。このショートハンドもExt JS 6から追加されたものです。
 
-### Productionビルドで動かない時は
+### 3. Productionビルドで動かない時は
 
 ありますよね、こういう時。今回、何度か遭遇しました。
 
