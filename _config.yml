@@ -18,13 +18,13 @@ description: > #
   <br>
   In my spare time, I hack an open source software and spend time with my wife and son.
 
-url: http://kawanoshinobu.com
+url: http://shinobukawano.com
 baseurl: '/'
 paginate: 5
 
 author:
   name: 'Shinobu Kawano'
-  url: http://kawanoshinobu.com
+  url: http://shinobukawano.com
 
 exclude: ["vendor",".rbenv-version", ".gitignore", "README.md", "Gemfile", "Gemfile.lock", "Procfile", "unicorn.rb", "config.ru"]
 
