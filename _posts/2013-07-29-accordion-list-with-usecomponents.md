@@ -5,7 +5,7 @@ categories:
 css:
 ---
 
-Good morning! Yesterday, I added new feature into <a href="https://github.com/kawanoshinobu/Ext.ux.AccordionList">Ext.ux.AccordionList</a>. From now on, you can add a components into header item and content item. Actually, This feature was requested by many users. Thanks to all users, their voice grows this component more useful.
+Good morning! Yesterday, I added new feature into <a href="https://github.com/shinobukawano/Ext.ux.AccordionList">Ext.ux.AccordionList</a>. From now on, you can add a components into header item and content item. Actually, This feature was requested by many users. Thanks to all users, their voice grows this component more useful.
 
 
 
@@ -69,7 +69,7 @@ That's ok. Accordion List appears components bound items. You can check it at ex
 
 
 
-<a href="http://docs.kawanoshinobu.com/accordionlist">http://docs.kawanoshinobu.com/accordionlist</a>
+<a href="http://docs.shinobukawano.com/accordionlist">http://docs.shinobukawano.com/accordionlist</a>
 
 
 

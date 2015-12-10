@@ -18,7 +18,7 @@ ogimage: crm-v01-hero
 
 そのままお蔵入りにしても良かったのですが、もしかしたら誰かの役に立つかもしれないと思い、ソースコードをGitHubで公開しました。READMEの手順に従えば、手元のPCでアプリを動かすことができるかと思います。
 
-<a href="https://github.com/kawanoshinobu/SenchaCRM" target="_blank">https://github.com/kawanoshinobu/SenchaCRM</a>  
+<a href="https://github.com/shinobukawano/SenchaCRM" target="_blank">https://github.com/shinobukawano/SenchaCRM</a>  
 * Herokuボタンを付けたので、ワンクリックでご自身のHerokuアカウントにアプリをデプロイできます。
 
 <img src="/public/images/crm-v01-hero.jpg" style="width:80%"/>

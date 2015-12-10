@@ -11,7 +11,7 @@ css: jp-post
 
 メリークリスマス！皆様、今宵はいかがお過ごしでしょうか？私は、会社帰りの喫茶店でこのエントリを書いております。。Sencha Advent Calendar 2013 も残すところ、あと2日ですね！今年も楽しく参加させて頂きました ^^
 
-さて今回は、<a href="http://kawanoshinobu.com/2013/12/seven-tips-for-ux-authors/">前回、中途半端なところで終わった「ユーザーエクステンションを作る時に気をつけるべき7つのこと」</a>の続編です。
+さて今回は、<a href="http://shinobukawano.com/2013/12/seven-tips-for-ux-authors/">前回、中途半端なところで終わった「ユーザーエクステンションを作る時に気をつけるべき7つのこと」</a>の続編です。
 
 <!--more-->
 

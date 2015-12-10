@@ -65,7 +65,7 @@ Now, you can download this component from Sencha Market or GitHub repository.
 <a href="https://market.sencha.com/extensions/ext-ux-accordionlist">https://market.sencha.com/extensions/ext-ux-accordionlist</a>
 
 <strong>Ext.ux.AccordionList at GitHub repository:</strong>
-<a href="https://github.com/kawanoshinobu/Ext.ux.AccordionList">https://github.com/kawanoshinobu/Ext.ux.AccordionList</a>
+<a href="https://github.com/shinobukawano/Ext.ux.AccordionList">https://github.com/shinobukawano/Ext.ux.AccordionList</a>
 
 I hope this component will help you. Cheers :)
 

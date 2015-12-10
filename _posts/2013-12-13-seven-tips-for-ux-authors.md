@@ -41,7 +41,7 @@ Building a User Extension and Integrating It Into Sencha Architect 3 (Part 1):
 
 <h1>2. Test</h1>
 
-例えば、私が作っている <a href="https://github.com/kawanoshinobu/Ext.ux.AccordionList" target="_blank">Ext.ux.AccordionList</a> という Sencha Touch のコンポーネントですが、、ごめんなさい。ちゃんとテストを書いてないです。ありがたいことにコンポーネントが多くの方に使われるようになると、「品質」が問題になってきます。上記のコンポーネントは残念ながら、あまり品質はよくないようで、GitHub リポジトリに頻繁に issue があがりますし、star よりも fork の方が多い状況です（star:20 に対して、fork: 22もある。。）。
+例えば、私が作っている <a href="https://github.com/shinobukawano/Ext.ux.AccordionList" target="_blank">Ext.ux.AccordionList</a> という Sencha Touch のコンポーネントですが、、ごめんなさい。ちゃんとテストを書いてないです。ありがたいことにコンポーネントが多くの方に使われるようになると、「品質」が問題になってきます。上記のコンポーネントは残念ながら、あまり品質はよくないようで、GitHub リポジトリに頻繁に issue があがりますし、star よりも fork の方が多い状況です（star:20 に対して、fork: 22もある。。）。
 
 また、送ってもらったパッチを気分よく取り込んだところ、基本的な機能（項目の開閉）ができなくなっていて、後日、別の人からクレームが来る、ということがありました。機能の修正によるデグレードを検知するためにも、テストはしっかり整備しておきたいところです。
 
@@ -62,7 +62,7 @@ JSDuck:
 
 Ext.ux.AccordionList のドキュメントでは、憧れのライブプレビューを組み込みました。
 
-<a href="http://docs.kawanoshinobu.com/touch/#!/api/Ext.ux.AccordionList" target="_blank">http://docs.kawanoshinobu.com/touch/#!/api/Ext.ux.AccordionList</a>
+<a href="http://docs.shinobukawano.com/touch/#!/api/Ext.ux.AccordionList" target="_blank">http://docs.shinobukawano.com/touch/#!/api/Ext.ux.AccordionList</a>
 
 実は、ライブプレビューのデバイス画像は JSDuck の標準機能ではなく <a href="https://github.com/senchalabs/jsduck/issues/269" target="_blank">Sencha Touch 向けのハック</a>のようです。デバイス画像を表示するには、ドキュメントビルド時に –touch-examples-ui という隠しオプションを true にする必要があるようです。
 

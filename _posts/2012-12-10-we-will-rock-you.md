@@ -44,7 +44,7 @@ Vimeo にその勇姿をアップしました。
 
 <iframe src="//player.vimeo.com/video/55203029" width="500" height="313" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
-<a href="http://vimeo.com/55203029">Sencha Touch 2.1 Ext.device.Notification.vibrate</a> from <a href="http://vimeo.com/kawanoshinobu">kawanoshinobu</a> on <a href="https://vimeo.com">Vimeo</a>.
+<a href="http://vimeo.com/55203029">Sencha Touch 2.1 Ext.device.Notification.vibrate</a> from <a href="http://vimeo.com/shinobukawano">shinobukawano</a> on <a href="https://vimeo.com">Vimeo</a>.
 
 
 

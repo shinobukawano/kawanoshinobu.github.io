@@ -17,7 +17,7 @@ This weekend, I created Sencha Touch custom theme based on Flat UI. You can chec
 
 
 
-<a href="http://kawanoshinobu.com/apps/sencha-touch-flat-ui/">http://kawanoshinobu.com/apps/sencha-touch-flat-ui/</a>
+<a href="http://shinobukawano.com/apps/sencha-touch-flat-ui/">http://shinobukawano.com/apps/sencha-touch-flat-ui/</a>
 
 
 
@@ -25,7 +25,7 @@ This weekend, I created Sencha Touch custom theme based on Flat UI. You can chec
 
 
 
-<a href="https://github.com/kawanoshinobu/sencha-touch-flat-ui-theme">https://github.com/kawanoshinobu/sencha-touch-flat-ui-theme</a>
+<a href="https://github.com/shinobukawano/sencha-touch-flat-ui-theme">https://github.com/shinobukawano/sencha-touch-flat-ui-theme</a>
 
 
 

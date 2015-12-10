@@ -84,11 +84,11 @@ Actually, the smart phone’s default browser is not support WebRTC.. Now, we ca
 
 <ul>
 <li>Demo
-<a href="http://kawanoshinobu.github.io/Ext.ux.WebRTC/">http://kawanoshinobu.github.io/Ext.ux.WebRTC/</a>
+<a href="http://shinobukawano.github.io/Ext.ux.WebRTC/">http://shinobukawano.github.io/Ext.ux.WebRTC/</a>
 
 </li>
 <li>Repository
-<a href="https://github.com/kawanoshinobu/Ext.ux.WebRTC">https://github.com/kawanoshinobu/Ext.ux.WebRTC</a></li> </ul> </li> </ul> </li> </ul> </li> </ul> </li> </ul> </li> </ul> </li> </ul> </li> </ul> </li> </ul> </li> </ul> </li> </ul> </li> </ul> </li> </ul> </li> </ul> </li> </ul>
+<a href="https://github.com/shinobukawano/Ext.ux.WebRTC">https://github.com/shinobukawano/Ext.ux.WebRTC</a></li> </ul> </li> </ul> </li> </ul> </li> </ul> </li> </ul> </li> </ul> </li> </ul> </li> </ul> </li> </ul> </li> </ul> </li> </ul> </li> </ul> </li> </ul> </li> </ul> </li> </ul>
 
 </li>
 </ul></li>

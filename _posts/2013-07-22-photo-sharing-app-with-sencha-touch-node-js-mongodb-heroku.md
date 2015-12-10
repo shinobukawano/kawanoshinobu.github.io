@@ -35,7 +35,7 @@ I thought this is maybe useful for developers who want to create Sencha Touch ap
 
 
 
-<a href="https://github.com/kawanoshinobu/photo-sharing-app">https://github.com/kawanoshinobu/photo-sharing-app</a>
+<a href="https://github.com/shinobukawano/photo-sharing-app">https://github.com/shinobukawano/photo-sharing-app</a>
 
 
 
@@ -47,7 +47,7 @@ Also, it is good example to use my custom theme "Sencha Touch Flat UI Theme" :D
 
 
 
-<a href="http://vimeo.com/70722097">Photo Sharing App</a> from <a href="http://vimeo.com/kawanoshinobu">kawanoshinobu</a> on <a href="https://vimeo.com">Vimeo</a>.
+<a href="http://vimeo.com/70722097">Photo Sharing App</a> from <a href="http://vimeo.com/shinobukawano">shinobukawano</a> on <a href="https://vimeo.com">Vimeo</a>.
 
 
 

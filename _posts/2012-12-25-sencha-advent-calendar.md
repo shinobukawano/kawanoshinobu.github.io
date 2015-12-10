@@ -27,7 +27,7 @@ css: jp-post
 
 
 
-<strong>1日目: <a href="http://kawanoshinobu.com/2012/12/tutorial-1/">Sencha Touch Tutorial: メモ帳アプリを作る #1</a> - @kawanoshinobu</strong>
+<strong>1日目: <a href="http://shinobukawano.com/2012/12/tutorial-1/">Sencha Touch Tutorial: メモ帳アプリを作る #1</a> - @shinobukawano</strong>
 
 
 
@@ -35,7 +35,7 @@ css: jp-post
 
 
 
-<strong>2日目: <a href="http://kawanoshinobu.com/2012/12/tutorial-2/">Sencha Touch Tutorial: メモ帳アプリを作る #2</a> - @kawanoshinobu</strong>
+<strong>2日目: <a href="http://shinobukawano.com/2012/12/tutorial-2/">Sencha Touch Tutorial: メモ帳アプリを作る #2</a> - @shinobukawano</strong>
 
 
 
@@ -51,7 +51,7 @@ css: jp-post
 
 
 
-<strong>4日目: <a href="http://kawanoshinobu.com/2012/12/var-me-this/">var me = this の話</a> - @kawanoshinobu</strong>
+<strong>4日目: <a href="http://shinobukawano.com/2012/12/var-me-this/">var me = this の話</a> - @shinobukawano</strong>
 
 
 
@@ -99,7 +99,7 @@ Sencha Touch のコードリーディングメモ。独特な感想が @stakamur
 
 
 
-<strong>10日目: <a href="http://kawanoshinobu.com/2012/12/we-will-rock-you/">We Will Rock You!</a> - @kawanoshinobu</strong>
+<strong>10日目: <a href="http://shinobukawano.com/2012/12/we-will-rock-you/">We Will Rock You!</a> - @shinobukawano</strong>
 
 
 
@@ -163,7 +163,7 @@ Sencha/Ext JSのロケールについての話。@zoetro さんの後を繋ぎ�
 
 
 
-<strong>18日目: <a href="http://kawanoshinobu.com/2012/12/tutorial-3/">Sencha Touch Tutorial: メモ帳アプリを作る #3</a> - @kawanoshinobu</strong>
+<strong>18日目: <a href="http://shinobukawano.com/2012/12/tutorial-3/">Sencha Touch Tutorial: メモ帳アプリを作る #3</a> - @shinobukawano</strong>
 
 
 
@@ -171,7 +171,7 @@ Sencha/Ext JSのロケールについての話。@zoetro さんの後を繋ぎ�
 
 
 
-<strong>19日目: <a href="http://kawanoshinobu.com/2012/12/tutorial-4/">Sencha Touch Tutorial: メモ帳アプリを作る #4</a> - @kawanoshinobu</strong>
+<strong>19日目: <a href="http://shinobukawano.com/2012/12/tutorial-4/">Sencha Touch Tutorial: メモ帳アプリを作る #4</a> - @shinobukawano</strong>
 
 
 
@@ -187,7 +187,7 @@ TypeScript で Sencha Touch を開発する、という、これまた変態的�
 
 
 
-<strong>21日目: <a href="http://kawanoshinobu.com/2012/12/tutorial-final/">Sencha Touch Tutorial: メモ帳アプリを作る #最終回</a> - @kawanoshinobu</strong>
+<strong>21日目: <a href="http://shinobukawano.com/2012/12/tutorial-final/">Sencha Touch Tutorial: メモ帳アプリを作る #最終回</a> - @shinobukawano</strong>
 
 
 

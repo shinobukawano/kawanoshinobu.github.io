@@ -18,7 +18,7 @@ Also I created the API documentation, Jasmine and Phamtomjs based unit test.
 
 <h3>Documentation page is here:</h3>
 
-<a href="http://docs.kawanoshinobu.com/touch/#!/api/Ext.ux.AccordionList">http://docs.kawanoshinobu.com/touch/#!/api/Ext.ux.AccordionList</a>
+<a href="http://docs.shinobukawano.com/touch/#!/api/Ext.ux.AccordionList">http://docs.shinobukawano.com/touch/#!/api/Ext.ux.AccordionList</a>
 
 
 
@@ -53,13 +53,13 @@ Interested? I'm happy if you try the live demo and use it ;)
 
 <h3>Live Demo:</h3>
 
-<a href="http://docs.kawanoshinobu.com/accordionlist">http://docs.kawanoshinobu.com/accordionlist</a>
+<a href="http://docs.shinobukawano.com/accordionlist">http://docs.shinobukawano.com/accordionlist</a>
 
 
 
 <h3>Repository:</h3>
 
-<a href="https://github.com/kawanoshinobu/Ext.ux.AccordionList">https://github.com/kawanoshinobu/Ext.ux.AccordionList</a>
+<a href="https://github.com/shinobukawano/Ext.ux.AccordionList">https://github.com/shinobukawano/Ext.ux.AccordionList</a>
 
 
 

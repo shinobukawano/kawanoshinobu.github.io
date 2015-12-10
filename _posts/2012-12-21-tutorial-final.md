@@ -13,7 +13,7 @@ css: jp-post
 
 
 
-<a href="http://kawanoshinobu.com/2012/12/tutorial-7/">前回</a>、最終回のつもりが予想以上に長くなってしまったので、残りを今回で説明します。今回は、アプリのビルド・デプロイと、ネイティブパッケージングについて取り上げます。
+<a href="http://shinobukawano.com/2012/12/tutorial-7/">前回</a>、最終回のつもりが予想以上に長くなってしまったので、残りを今回で説明します。今回は、アプリのビルド・デプロイと、ネイティブパッケージングについて取り上げます。
 
 
 
@@ -101,7 +101,7 @@ build というディレクトリが作成され、そのディレクトリの {
 
 
 
-<a href="http://kawanoshinobu.github.com/memo/">http://kawanoshinobu.github.com/memo/</a>
+<a href="http://shinobukawano.github.com/memo/">http://shinobukawano.github.com/memo/</a>
 
 
 
@@ -132,7 +132,7 @@ Sencha Cmd を使うことで、コマンドひとつでネイティブアプリ
 
 
 
-<a href="https://github.com/kawanoshinobu/memo">https://github.com/kawanoshinobu/memo</a>
+<a href="https://github.com/shinobukawano/memo">https://github.com/shinobukawano/memo</a>
 
 
 
@@ -148,7 +148,7 @@ Sencha Cmd を使うことで、コマンドひとつでネイティブアプリ
 
 
 
-（追記）チュートリアルの感想を、<a href="https://twitter.com/kawanoshinobu">@kawanoshinobu</a> 宛にメンション頂けると、とても喜びます！
+（追記）チュートリアルの感想を、<a href="https://twitter.com/shinobukawano">@shinobukawano</a> 宛にメンション頂けると、とても喜びます！
 
 
 
