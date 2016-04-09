@@ -4,7 +4,7 @@ gems: [jekyll-paginate]
 
 # Permalinks
 permalink: :year/:month/:title/
-highlighter : pygments
+highlighter : rouge
 
 # Setup
 title: SHINOBU KAWANO
