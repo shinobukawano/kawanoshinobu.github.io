@@ -6,9 +6,6 @@ css: jp-post
 ogimage: crm-v01-hero
 ---
 
-<!-- なんだか毎年、アウェイな気分でアドベントカレンダーに参加しています、川野です ^^;   
-<a href="http://www.adventar.org/calendars/1041" target="_blank">Sencha Advent Calendar 2015</a> - 6日目を担当しますので、よろしくお願いします。 -->
-
 これは <a href="http://www.adventar.org/calendars/1041" target="_blank">Sencha Advent Calendar 2015</a> の6日目の記事です。
 
 11月に数日間、自由に使える日があったので、Ext JS 6の勉強も兼ねてちょっとしたSenchaアプリを作りました。 シンプルなCRUD機能を持つユニバーサル（デスクトップ + モバイル）アプリで、PostgreSQLにデータを永続化します。
@@ -18,7 +15,7 @@ ogimage: crm-v01-hero
 
 そのままお蔵入りにしても良かったのですが、もしかしたら誰かの役に立つかもしれないと思い、ソースコードをGitHubで公開しました。READMEの手順に従えば、手元のPCでアプリを動かすことができるかと思います。
 
-<a href="https://github.com/shinobukawano/SenchaCRM" target="_blank">https://github.com/shinobukawano/SenchaCRM</a>  
+<a href="https://github.com/shinobukawano/SenchaCRM/tree/0.1" target="_blank">https://github.com/shinobukawano/SenchaCRM/tree/0.1</a>  
 * Herokuボタンを付けたので、ワンクリックでご自身のHerokuアカウントにアプリをデプロイできます。
 
 <img src="/public/images/crm-v01-hero.jpg" style="width:80%"/>
