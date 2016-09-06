@@ -72,29 +72,29 @@ Sencha Architectのチュートリアル「<a href="http://docs.sencha.com/archi
 
       - 代わりに、中央のデザイン領域のデバイスキャンバスにあるタブの文字をダブルクリックして新しいテキストやタイトルを直接入力して変更することも可能です。
 
-  9. For the "Employee Directory" tab, input “iconCls” and click Add on the right-hand side of the filter field to add “iconCls” as a custom configuration. Set the value of “iconCls” to “x-fa fa-users”. This will add an icon to the tab using the Ext JS theme’s icon set.
+  9. "Employee Directory" タブにて、"iconCls" と入力し、絞り込み欄の右側にある「Add」をクリックして「iconCls」をカスタムコンフィグとして追加します。その後、「iconCls」の値に「x-fa fa-users」と入力して下さい。これによりタブにアイコン（Ext JS のテーマに含まれるアイコン集から取得）が追加されます。
 
-  10. Select Tab 2 in the Project Inspector pane. Update the title to "About Sencha"
+  10. Project Inspector 領域で Tab 2 を選択して下さい。その後、title を「About Sencha」に変更します。
 
-  11. For the "About Sencha" tab, add the custom “iconCls” config and set its value to “x-fa fa-info-circle”.
+  11. "About Sencha" タブにて、"iconCls" カスタムコンフィグを追加し、値に「x-fa fa-info-circle」を設定して下さい。
 
-  12. Preview the project to view your updates outside of Architect.
+  12. プレビューボタンを押して、適用した更新を Architect の外で確認してみましょう。
 
-      - If you did not save before clicking the Preview button you will be prompted to save.
+      - もしプロジェクトを保存する前にプレビューボタンを押した場合は、保存を促すプロンプトが表示されます。
 
-**Step 4: Add "About Sencha" Panel in Tab 2**
+**ステップ 4: "About Sencha" パネルを Tab 2に追加**
 
-Here you’ll add the content and styling of the company information panel.
+ここでは、企業情報パネルに内容とスタイルを追加します。
 
-  1. With the "About Sencha" tab selected in the Project Inspector pane, search for “html” in config panel. Change html to the following:
+  1. Project Inspector 領域で "About Sencha" タブを選択し、config 領域で "html" と検索します。その後、html コンフィグの値を下記に変更して下さい。
 
-            <h1>About Sencha</h1><br/>More than 10,000 customers and 60% of the Fortune 100 rely on Sencha solutions to deliver innovative applications that drive their businesses. With a longstanding commitment to web technologies, Sencha dramatically reduces the cost and complexity of developing and delivering enterprise applications across multiple device types.<br/><br/><h2>Create feature-rich HTML5 applications using JavaScript</h2><br/>Sencha Ext JS is the most comprehensive MVC/MVVM JavaScript framework for building feature-rich, cross-platform web applications targeting desktops, tablets, and smartphones. Ext JS leverages HTML5 features on modern browsers while maintaining compatibility and functionality for legacy browsers.<br/><br/>Ext JS features hundreds of high-performance UI widgets that are meticulously designed to fit the needs of the simplest as well as the most complex web applications. Ext JS templates and layout manager give you full control over your display irrespective of devices and screen sizes. An advanced charting package allows you to visualize large quantities of data. The framework includes a robust data package that can consume data from any backend data source. Ext JS also offers several out-of-the-box themes, and complete theming support that lets you build applications that reflect your brand. It also includes an accessibility package (ARIA) to help with Section 508 compliance.
+         <h1>About Sencha</h1><br/>More than 10,000 customers and 60% of the Fortune 100 rely on Sencha solutions to deliver innovative applications that drive their businesses. With a longstanding commitment to web technologies, Sencha dramatically reduces the cost and complexity of developing and delivering enterprise applications across multiple device types.<br/><br/><h2>Create feature-rich HTML5 applications using JavaScript</h2><br/>Sencha Ext JS is the most comprehensive MVC/MVVM JavaScript framework for building feature-rich, cross-platform web applications targeting desktops, tablets, and smartphones. Ext JS leverages HTML5 features on modern browsers while maintaining compatibility and functionality for legacy browsers.<br/><br/>Ext JS features hundreds of high-performance UI widgets that are meticulously designed to fit the needs of the simplest as well as the most complex web applications. Ext JS templates and layout manager give you full control over your display irrespective of devices and screen sizes. An advanced charting package allows you to visualize large quantities of data. The framework includes a robust data package that can consume data from any backend data source. Ext JS also offers several out-of-the-box themes, and complete theming support that lets you build applications that reflect your brand. It also includes an accessibility package (ARIA) to help with Section 508 compliance.
 
-  2. Add padding to our "About Sencha" tab by searching for “padding” and setting the “padding” config value to 10
+  2. "About Sencha" タブに余白を追加します。 padding コンフィグを検索し、値に「10」を設定して下さい。
 
-  3. Click on Save
+  3. 保存をクリックします。
 
-  4. Preview the app
+  4. アプリケーションをプレビュー表示して確認下さい。
 
 **Step 5: Add Model**
 
