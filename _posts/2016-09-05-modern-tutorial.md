@@ -10,7 +10,7 @@ ogimage: modern-employee-directory-parts
 Sencha Architectのチュートリアル「<a href="http://docs.sencha.com/architect/4/guides/tutorials/first_mobile_application.html" target="_blank">First Modern Application <i class="fa fa-external-link" aria-hidden="true"></i></a>」の日本語訳です。
 </pre>
 
-これから「従業員一覧」アプリを作成します。本ガイドでは Sencha Architect 4.0 を使って Ext JS の Modern アプリケーションを開発するための基礎知識を学習します。
+これから「従業員一覧」アプリケーションを作成します。本ガイドでは、Ext JS の Modern アプリを開発するための Architect 4.0 の基本的な使い方を学習します。
 
 <img src="/public/images/modern-employee-directory-parts.jpg" style="width:80%"/>
 
