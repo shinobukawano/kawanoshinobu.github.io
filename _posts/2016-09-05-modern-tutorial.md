@@ -138,59 +138,59 @@ Sencha Architectのチュートリアル「<a href="http://docs.sencha.com/archi
 
   3. Columns コンフィグで、行の「+」ボタンをクリックすると表示されるドロップダウンメニューから「Column」を選択して、2つのカラムを追加して下さい。
 
-  4. In the config pane search for "store" and select “Employees” from the store config’s drop down option
+  4. Config 領域にて "store" と検索し、store コンフィグのドロップダウンリストで "Employees" を選択します。
 
-  5. Select the "String" column from the Project Inspector pane under the Employee Directory grid item
+  5. Project Inspector 領域で Emproyee Directory グリッド配下の "String" カラムを選択します。
 
-  6. In the config pane search for "text" and change the value from “String” to “First Name”
+  6. Config 領域で　"text" コンフィグを検索し、値を「String」から「First Name」に変更します。
 
-  7. Search for the "dataIndex" config and select “firstName” from the dataIndex config’s drop down option
+  7. "dataIndex" コンフィグを検索し、detaIndex のドロップダウンリストから「firstName」を選択します。
 
-  8. Select "MyColumn2" from the Project Inspector pane
+  8. Project Inspector 領域で "MyColumn2" を選択します。
 
-  9. In the config panel search for "text" and change the value from “MyColumn2” to “Last Name”
+  9. Config Panel にて "text" コンフィグを検索し、値を「MyColumn2」から「Last Name」に変更して下さい。
 
-  10. Search for the "dataIndex" config and select “lastName” for the dataIndex config
+  10. "dataIndex" コンフィグを検索し、値に「lastName」を選択します。
 
-  11. Select "MyColumn3" from the Project Inspector pane
+  11. Project Inspector 領域で "MyColumn3" を選択します。
 
-  12. In the config panel search for "text" and change the value from “MyColumn3” to “Phone Number”
+  12. Config Panel にて "text" コンフィグを検索し、値を「MyColumn3」から「Phone Number」に変更して下さい。
 
-  13. Search for the "dataIndex" config and select “phoneNumber” for the dataIndex config
+  13. "dataIndex" コンフィグを検索し、値に「phoneNumber」を選択します。
 
-  14. For each column search for the "width" config and set the value to 120
+  14. 全てのカラムにて "width" コンフィグを検索し、値に「120」を設定して下さい。
 
-  15. Preview the app
+  15. アプリをプレビュー表示します。
 
-*ステップ8は見当たらない*
+      <pre><i class="fa fa-medkit" aria-hidden="true"></i> 訳注: ステップ8はありません。</pre>
 
-**Step 9: Add Form Panel**
+**ステップ 9: フォームパネルの追加**
 
-With the employee grid finished we’ll now create a form used to view and modify the details of an employee record.
+従業員一覧が完成したので、次は従業員レコードの詳細を確認・変更するためのフォームを作成します。
 
-  1. In the Toolbox pane search for "form" and drag a “Form Panel” instance on to the Views node in the Project Inspector pane
+  1. Toolbox 領域にて "form" と検索し、"Form Panel"のインスタンスを Project Inspector 領域の "Views" 直下にドラッグします。
 
-  2. Search for "name" in config panel and change “userClassName” from “MyFormPanel” to “UpdateRecordForm”
+  2. Config Panel にて "name" と検索し、「userClassName」の値を「MyFormPanel」から「UpdateRecordForm」に変更して下さい。
 
-  3. Search for "title" and change it from “My Form” to “Update Record”
+  3. "title" を検索し、値を「My Form」から「Update Record」に変更して下さい。
 
-  4. Search for the "modal" and select (check) it
+  4. "modal" を検索し、選択（チェック）して下さい。
 
-  5. Search for "centered" and select it
+  5. "centered" を検索し、選択して下さい。
 
-  6. Search for "text field" in the Toolbox pane
+  6. Toolbox 領域にて "text field" を検索します。
 
-  7. Drag a "Text Field" component on to the device canvas and drop it on the Update Record form panel. Do this three more times so that there is a total of four text fields on the “Update Record”.
+  7. "Text Field" をデバイスキャンバス上の Update Record フォームパネルにドラッグ＆ドロップして下さい。この作業をあと3回繰り返し、合計で4つのテキストフィールドが "Update Record" フォームに含まれるようにします。
 
-  8. Select the first text field (from either the design view or within the Project Inspector pane) and search for the "label" config. Change the label from “Field” to “First Name”. Do the same for each text field using the labels: First Name, Last Name, Office Location, and Phone Number.
+  8. 最初のテキストフィールドを選択し（デザインビューでも Project Inspector 領域でもどちらでも構いません）、"label" コンフィグを検索します。その後、値を「Field」から「First Name」に変更して下さい。同じ作業をそれぞれのテキストフィールドで繰り返します。設定する label コンフィグの値は右記の通りです。「First Name」「Last Name」「Office Location」「Phone Number」
 
-  9. Search for "toolbar" in the Toolbox pane and drag a Toolbar on to the Fom Panel
+  9. Toolbox 領域で "toolbar" を検索し、Toolbar をフォームパネル上に配置して下さい。
 
-  10. With the toolbar selected search for the "docked" config and set its value to “bottom” using the drop down
+  10. ツールバーを選択し "docked" コンフィグを検索します。その後、値の選択肢で「bottom」を設定して下さい、
 
-  11. Click Save
+  11. 保存をクリックします。
 
-**Step 10: Add Buttons to Form Panel**
+**ステップ 10: フォームパネルへのボタンの追加**
 
 Next, you’ll add buttons to the Update Record form that will either save edits back to the employee record or cancel the edit and close the form (we’ll save the binding of the record to the form itself for a later step).
 
