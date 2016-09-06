@@ -96,47 +96,47 @@ Sencha Architectのチュートリアル「<a href="http://docs.sencha.com/archi
 
   4. アプリケーションをプレビュー表示して確認下さい。
 
-**Step 5: Add Model**
+**Step 5: モデルの追加**
 
-Before stubbing in data for the employee directory you’ll first create a data model with fields describing the data set to be consumed by the grid / directory.
+従業員一覧用のダミーデータを作成する前に、モデルを作成します。モデルはデータを表現するフィールドを持ち、グリッド等で利用されます。
 
-  1. In the Project Inspector pane, click the "+" button and select Model from the drop down menu
+  1. Project Inspector 領域にて、「+」ボタンをクリックし、ドロップダウンメニューから「Model」を選択します。
 
-  2. Search for "name" in config panel and change the “userClassName” config from “MyModel” to “Employee”
+  2. Config Panel 領域にて「name」と検索し、"userClassName" の値を "MyModel" から "Employee" に変更して下さい。
 
-  3. From the config panel, search "fields".
+  3. Config Panel 領域にて「fields」と検索します。
 
-  4. Click the "+" button on the right-hand side of the fields config.
+  4. fields コンフィグの右端にある「+」ボタンをクリックします。
 
-  5. Enter "firstName, lastName, officeLocation, phoneNumber" and click Finish
+  5. 「firstName, lastName, officeLocation, phoneNumber」と入力し、「Finish」をクリックして下さい。
 
-  6. Click Save
+  6. 保存をクリックします。
 
-**Step 6: Add Store**
+**ステップ 6: ストアの追加**
 
-Next, you’ll add a data store to your project that will furnish data to the employee directory view. Architect will generate mock data allowing you to further visualize how your application will work once populated with employee data.
+続いて、従業員一覧ビューにデータを供給するためのデータストアをプロジェクトに追加します。Architectは従業員データが存在する場合にどのような表示・動作になるかを確認できるようモックデータを生成します。
 
-  1. From the Project Inspector pane, click the "+" button and choose Store > Json Store from the drop down menu
+  1. Project Inspector 領域にて「+」ボタンをクリックし、ドロップダウンメニューから「Store」の「Json Store」を選択して下さい。
 
-  2. Search for "name" in config panel and change the “userClassName” from “MyJsonStore” to “Employees”
+  2. Config Panel 領域にて "name" と検索し、"userClassName" を "MyJsonStore" から "Employees" に変更して下さい。
 
-  3. Right click on the Employees store item in the Project Inspector pane and select Generate Mock Data
+  3. Project Inspector 領域の Employees ストア上で右クリック、その後「Generate Mock Data」を選択します。
 
-  4. In the Generate Mock Data dialog window choose "Employee" for the Select Model field and click the Generate button
+  4. モックデータ生成ウィンドウにて 対象モデルのフィールドを指定するために "Employee"を選択し、「Generate」ボタンをクリックして下さい。
 
-      Note: When not generating mock data for your app you will want to associate your Employee model to your Employees store by filtering for "model" on the store config and selecting the “Employee” model from the “model” config’s drop down option.
+      <pre><i class="fa fa-info-circle" aria-hidden="true"></i> 注記: もしモックデータを生成しない場合で、Employees ストアに Employee モデルを関連付けたい場合は、ストアの「model」コンフィグのドロップダウンオプションで「Employee」を選択して下さい。</pre>
 
-  5. Click Save
+  5. 保存をクリックします。
 
-**Step 7: Set Up the Employee Directory Grid**
+**ステップ 7: 従業員一覧のグリッドを設定する**
 
-The employee directory grid has been added as a tab, but not yet configured to display the employee data from the Employees data store. In the following steps you will configure the presentation of the employee grid as well as associate each column to its corresponding field in the data store.
+従業員一覧のグリッドはタブとして既に追加されていますが、まだ Employees データストアから従業員データを表示するための設定ができていません。下記の手順では、従業員一覧のグリッドの設定を行い、また各々のカラムにデータストアのどのフィールドの値を表示させるかを設定します。
 
-  1. Select the Employee Directory grid item found in the Project Inspector pane found at Application > Views > Main > Employee Directory
+  1. Project Inspector 領域の Application > Views > Main 配下にある Employee Directory を選択します。
 
-  2. Search for "columns" in the configs panel and delete all entries on the “Columns” config except for String by clicking on the “X” icon next to each entry
+  2. Config Panel にて "columns" と検索し、「String」カラム以外は各項目の隣になる「X」アイコンをクリックして全て削除して下さい。
 
-  3. On the "Columns" config add two columns by clicking on the “+” button on the “Columns” config line and selecting “Column” from the drop down menu
+  3. Columns コンフィグで、行の「+」ボタンをクリックすると表示されるドロップダウンメニューから「Column」を選択して、2つのカラムを追加して下さい。
 
   4. In the config pane search for "store" and select “Employees” from the store config’s drop down option
 
@@ -161,6 +161,8 @@ The employee directory grid has been added as a tab, but not yet configured to d
   14. For each column search for the "width" config and set the value to 120
 
   15. Preview the app
+
+*ステップ8は見当たらない*
 
 **Step 9: Add Form Panel**
 
