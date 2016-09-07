@@ -20,7 +20,7 @@ Sencha Architectのチュートリアル「<a href="http://docs.sencha.com/archi
 
   1. <a href="http://pages.sencha.com/architect-4-ea.html" target="_blank">ここ <i class="fa fa-external-link" aria-hidden="true"></i></a> から Architect をダウンロードします
 
-  2. Architect をインストールして起動して下さい。必要な場合、トライアル登録もしくは継続して下さい。
+  2. Architect をインストールして起動して下さい。必要な場合、トライアルの登録もしくは継続をして下さい。
 
   3. Architect の初期ダイアログで**「New Project」**をクリックします。
 
@@ -38,7 +38,7 @@ Sencha Architectのチュートリアル「<a href="http://docs.sencha.com/archi
 
       1. **「Save Path」**でプロジェクトを保存したい場所を指定して下さい。
 
-      2. **「Project Name」**にプロジェクト名を入力します。プロジェクト名は同時に上記で指定した場所に生成されるディレクトリ名となります。本チュートリアルでは「EmployeeDirectory」と入力して下さい。
+      2. **「Project Name」**にプロジェクト名を入力します。プロジェクト名は同時に上記で指定した場所に作成されるディレクトリ名となります。本チュートリアルでは「EmployeeDirectory」と入力して下さい。
 
       3. **「App Name」**にはアプリ名を入力します。この値はアプリケーションのそれぞれのクラスファイルで名前空間として利用されます。本チュートリアルでは「EmpDir」と入力して下さい。
 
@@ -48,7 +48,7 @@ Sencha Architectのチュートリアル「<a href="http://docs.sencha.com/archi
 
   3. 保存時に「Would you like to scan your project for references to the old application name?」のメッセージが出ますが、ここでは**「No」**をクリックして下さい。
 
-  4. アプリケーションの作成過程をプレビューするには、"Preview App" ボタン <img src="/public/images/preview_app_button.png"/> をクリックします。保存ボタンの右側に配置されている「Preview button」をクリックして下さい。端末のデフォルトブラウザが起動し、アプリケーションの現在の画面が表示されます（デバイスのキャンバスにドラッグしたタブパネルが表示されます）。
+  4. アプリケーションの作成過程をプレビューするには、プレビューボタン <img src="/public/images/preview_app_button.png"/> をクリックします。保存ボタンの右側に配置されているプレビューボタンをクリックして下さい。端末のデフォルトブラウザが起動し、アプリケーションの現在の画面が表示されます（デバイスのキャンバスにドラッグしたタブパネルが表示されます）。
 
 **ステップ 3: 2つだけのタブを持つようTab Panelを更新**
 
@@ -57,6 +57,8 @@ Sencha Architectのチュートリアル「<a href="http://docs.sencha.com/archi
   1. Project Inspector 領域の **MyTabPanel** を選択します。
 
   2. Toolbox 領域の下側にある領域は Config 領域です。ここではアプリケーションに含まれるコンポーネントや他のクラスの設定を変更することができます。「**Filter Configs...**」でコンフィグ名を入力することで Config 領域のフィールドを絞り込みできます。
+
+      <pre><i class="fa fa-medkit" aria-hidden="true"></i> 訳注: ショートカットキー「Ctrl+e」で絞り込み欄にジャンプできます。ぜひご利用下さい。</pre>
 
   3. **userClassName** コンフィグの値を「MyTabPanel」から「Main」に変更して下さい。
 
@@ -74,11 +76,13 @@ Sencha Architectのチュートリアル「<a href="http://docs.sencha.com/archi
 
   9. "Employee Directory" タブにて、"iconCls" と入力し、絞り込み欄の右側にある「**Add**」をクリックして「iconCls」をカスタムコンフィグとして追加します。その後、「iconCls」の値に「x-fa fa-users」と入力して下さい。これによりタブにアイコン（Ext JS のテーマに含まれるアイコン集から取得）が追加されます。
 
+      <pre><i class="fa fa-medkit" aria-hidden="true"></i> 訳注: Senchaはテーマに<a href="http://fontawesome.io/" target="_blank">Font Awesome</a>のアイコンセットを組み込んでいます</pre>
+
   10. Project Inspector 領域で **Tab 2** を選択して下さい。その後、title を「About Sencha」に変更します。
 
   11. "About Sencha" タブにて、"iconCls" カスタムコンフィグを追加し、値に「x-fa fa-info-circle」を設定して下さい。
 
-  12. **プレビュー**ボタンを押して、適用した更新を Architect の外で確認してみましょう。
+  12. **プレビュー**ボタンを押して、適用した更新を Architect の外で確認して下さい。
 
       - もしプロジェクトを保存する前にプレビューボタンを押した場合は、保存を促すプロンプトが表示されます。
 
@@ -160,7 +164,11 @@ Sencha Architectのチュートリアル「<a href="http://docs.sencha.com/archi
 
   14. 全てのカラムにて "width" コンフィグを検索し、値に「120」を設定して下さい。
 
+      <pre><i class="fa fa-medkit" aria-hidden="true"></i> 訳注: width コンフィグの代わりに flex コンフィグを利用することで割合ベースでの幅指定が可能です。</pre>
+
   15. アプリをプレビュー表示します。
+
+      <pre><i class="fa fa-medkit" aria-hidden="true"></i> 訳注: 初期表示時に従業員一覧を表示させるためには「Main」コンポーネントを選択し「activeItem」コンフィグに「0」と設定下さい。</pre>
 
       <pre><i class="fa fa-medkit" aria-hidden="true"></i> 訳注: ステップ8はありません。</pre>
 
@@ -169,6 +177,8 @@ Sencha Architectのチュートリアル「<a href="http://docs.sencha.com/archi
 従業員一覧が完成したので、次は従業員レコードの詳細を確認・変更するためのフォームを作成します。
 
   1. Toolbox 領域にて "form" と検索し、"Form Panel"のインスタンスを Project Inspector 領域の "Views" 直下にドラッグします。
+
+      <pre><i class="fa fa-medkit" aria-hidden="true"></i> 訳注: View直下に配置することで、独自クラスを定義することになります</pre>
 
   2. Config Panel にて "name" と検索し、「userClassName」の値を「MyFormPanel」から「UpdateRecordForm」に変更して下さい。
 
@@ -278,14 +288,17 @@ Sencha Architectのチュートリアル「<a href="http://docs.sencha.com/archi
 
   2. "bind" コンフィグを検索し「**Edit**」ボタン <img src="/public/images/edit-config-button.png"/>  をクリックして下さい。
 
-  3. コードビューが表示されるので、値に「'{employee.firstName}'」を入力し、チェックマークをクリックして変更を確定します。
+  3. コードビューが表示されるので、値に「{employee.firstName}」を入力し、チェックマークをクリックして変更を確定します。
 
-  4. 「Last Name」テキストフィールド（MyTextField1）を選択し、bind コンフィグを検索、値に「'{employee.lastName}'」を設定して下さい。
+  4. 「Last Name」テキストフィールド（MyTextField1）を選択し、bind コンフィグを検索、値に「{employee.lastName}」を設定して下さい。
 
-  5. 「Employee Location」テキストフィールド（MyTextField2）を選択し、bind コンフィグを検索、値に「'{employee.officeLocation}'」を設定して下さい。
+  5. 「Employee Location」テキストフィールド（MyTextField2）を選択し、bind コンフィグを検索、値に「{employee.officeLocation}」を設定して下さい。
 
-  6. 「Phone Number」テキストフィールド（MyTextField3）を選択し、bind コンフィグを検索、値に「'{employee.phoneNumber}'」を設定して下さい。
+  6. 「Phone Number」テキストフィールド（MyTextField3）を選択し、bind コンフィグを検索、値に「{employee.phoneNumber}」を設定して下さい。
 
   7. アプリをプレビューします。グリッドの行をクリック/タップするとポップアップフォーム内にレコードが読み込まれます。そして、4つのフィールドにレコードの値が表示され、「Submit」ボタンを押下することで現在表示中のレコードの変更を確定し、「Cancel」ボタンを押下することで変更を取り消すことができます。
+
+
+<pre><i class="fa fa-medkit" aria-hidden="true"></i> 訳注: 本チュートリアルの手順で行った場合、従業員一覧の上部にタイトル行が表示され、冒頭のスクリーンショットと表示が異なります。</pre>
 
 以上でチュートリアルは完了です。お疲れ様でした。
