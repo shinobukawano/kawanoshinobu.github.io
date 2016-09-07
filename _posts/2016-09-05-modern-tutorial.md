@@ -192,67 +192,67 @@ Sencha Architectのチュートリアル「<a href="http://docs.sencha.com/archi
 
 **ステップ 10: フォームパネルへのボタンの追加**
 
-Next, you’ll add buttons to the Update Record form that will either save edits back to the employee record or cancel the edit and close the form (we’ll save the binding of the record to the form itself for a later step).
+続いて、Update Record フォームにボタンを追加します。それらのボタンは編集を保存して従業員一覧に戻るものと、編集を取り消してフォームを閉じるものです。（後半の手順でフォームにバインドしたレコードを保存します）
 
-  1. Search for "button" in the Toolbox pane. Drag a “Button” instance and drop it on top of the toolbar in the device canvas.
+  1. Toolbox 領域で "button" を検索します。Button インスタンスをドラッグし、デバイスキャンバスのツールバー上にドロップして下さい。
 
-  2. Search for the "text" config and change the value from “MyButton” to “Submit”
+  2. "text" コンフィグを検索し、値を「MyButton」から「Submit」に変更して下さい。
 
-  3. Search for the "iconCls" config and enter a value of “x-fa fa-check”
+  3. "iconCls" コンフィグを検索し、値に「x-fa fa-check」を入力下さい。
 
-  4. In the config search input "event" and click the “+” next to View Controller Event Bindings and.
+  4. "event" を検索し「+」ボタンをクリック、続いて「View Controller Event Bindings」を選択して下さい。
 
-  5. Enter "tap" and click the Finish button. This will add an “onButtonTap tap” item under View Controller Event Bindings where “onButtonTap” is the name of the method to execute when the button is tapped.
+  5. "tap" と入力し「Finish」ボタンをクリックします。これにより、View Controller Event Bindings 配下に「onButtonTap tap」項目が追加されます。「onButtonTap」はメソッドの名称で、ボタンをタップした際に実行されます。
 
-  6. Click the "->" button on the “onButtonTap” item. Change the “fn” value from “onButtonTap” to “submitUpdate”. This will add the “submitUpdate” method to the “Update Form”s View Controller.
+  6. onButtonTap 項目にある「->」ボタンをクリックします。その後、"fn" コンフィグの値を「onButtonTap」から「submitUpdate」に変更します。これにより「submitUpdate」メソッドが Update Form の View Controller に追加されます。
 
-  7. In the Project Inspector pane double-click on the submitUpdate item under the UpdateRecordFormViewController node. This will open up the code view for the submitUpdate method (note that the **Design view has now switched over to the Code** view in the main pane). Enter the following code for the submitUpdate method:
+  7. Project Inspector 領域にて UpdateRecordFormViewController 配下にある submitUpdate 項目をダブルクリックして下さい。この操作により、submitUpdate メソッドのコードビューが表示されます（注記: メイン領域のデザインビューがコードビューに切り替わります）。submitUpdate メソッドに下記のコードを記述して下さい。
 
          var view = this.getView(),
              record = view.getRecord();
          view.destroy();
          record.commit();
 
-  8. Press the "checkmark" button top-right of the code editor to commit the code
+  8. 右上の "checkmark" ボタンをクリックして変更を確定します。
 
-  9. Switch back over to the design view using the Design toggle button top-right of the center pane
+  9. 中央領域の右上にある切替ボタンを押下してデザインビューに戻って下さい。
 
-  10. Drag another "Button" instance and drop it on top of the toolbar in the device canvas
+  10. 新しく Button インスタンスをdラッグして、デバイスキャンバス上のツールバーにドロップして下さい。
 
-  11. Search for the "text" config and change the value from “MyButton1” to “Cancel”
+  11. "text" コンフィグを検索し、値を「MyButton1」から「Cancel」に変更して下さい。
 
-  12. Search for the "iconCls" config and enter a value of “x-fa fa-close”
+  12. "iconCls" コンフィグを検索し、値に「x-fa fa-close」を設定して下さい。
 
-  13. In the config search input "event" and click the “+” next to View Controller Event Bindings and.
+  13. "event" を検索し「+」ボタンをクリック、続いて「View Controller Event Bindings」を選択して下さい。
 
-  14. Enter "tap" and click the Finish button.
+  14. "tap" と入力し、「Finish」ボタンをクリックして下さい。
 
-  15. Click the "->" button on the “onButtonTap” item. Change the “fn” value from “onButtonTap” to “cancelUpdate”.
+  15. onButtonTap 項目にある「->」ボタンをクリックします。その後、"fn" コンフィグの値を「onButtonTap」から「cancelUpdate」に変更します。
 
-  16. In the Project Inspector pane double-click on the cancelUpdate item under the UpdateRecordFormViewController node. This will open up the code view for the cancelUpdate method. Enter the following code for the cancelUpdate method:
+  16. Project Inspector 領域にて UpdateRecordFormViewController 配下にある cancelUpdate 項目をダブルクリックして下さい。その後、cancelUpdate メソッドに下記のコードを記述します。
 
           var view = this.getView(),
               record = view.getRecord();
           view.destroy();
           record.reject();
 
-  17. Click the "checkmark" button top-right of the code editor to commit the code
+  17. 右上の "checkmark" ボタンをクリックして変更を確定します。
 
-  18. Click Save
+  18. 保存をクリックします。
 
-**Step 11: Show Form Panel from the Employee Grid**
+**ステップ 11: Employee Grid から Form Panel フォームを表示**
 
-Next, you’ll add the logic used to show the Update Record form when a grid row is clicked / tapped.
+続いて、グリッドの行にクリックもしくはタップされた際に実行する Update Record フォームを表示するためのロジックを追加します。
 
-  1. In the Project Inspector pane click on Employee Directory (at Application > Views > Main > Employee Directory).
+  1. Project Inspector 領域にて　Employee Directory (Application > Views > Main > Employee Directory) をクリックして下さい。
 
-  2. In the config search input "event" and click the “+” next to View Controller Event Bindings and.
+  2. "event" を検索し「+」ボタンをクリック、続いて「View Controller Event Bindings」を選択して下さい。
 
-  3. Enter "itemtap" and click the Finish button.
+  3. "itemtap" と入力し、「Finish」ボタンをクリックして下さい。
 
-  4. Click the "->" button on the “onGridItemTap” item. Change the “fn” value from “onGridItemTap” to “onPopupForm”.
+  4. onGridItemTap 項目にある「->」ボタンをクリックします。その後、"fn" コンフィグの値を「onGridItemTap」から「onPopupForm」に変更します。
 
-  5. In the Project Inspector pane double-click on the onPopupForm item under the MyTabPanelViewController node. This will open up the code view for the onPopupForm method. Enter the following code for the cancelUpdate method:
+  5. Project Inspector 領域にて MyTabPanelViewController 配下にある onPopupForm 項目をダブルクリックして下さい。その後、onPopupForm メソッドに下記のコードを記述します。
 
          Ext.Viewport.add({
              xtype: 'updaterecordform',
@@ -265,24 +265,27 @@ Next, you’ll add the logic used to show the Update Record form when a grid row
              }
          });
 
-   6. Click the "checkmark" button top-right of the code editor to commit the code
+   6. 右上の "checkmark" ボタンをクリックして変更を確定します。
 
-   7. Preview the app. Note that clicking / tapping a row of the grid will show the Update Record form panel.
+   7. アプリをプレビューします。グリッドの行をクリックして Update Record フォームが表示されることを確認して下さい。
 
-**Step 12: Bind Data in Popup Form to Grid**
+**ステップ 12: フォームへのデータのバインディング**
 
-Finally, let’s set up the binding of the employee record to the form fields used to edit the record. The binding uses the viewModel configuration of the updaterecordform in the previous section. The record is associated to the view model data with a key of "employee". Each named field on the employee record will be used in the following steps when binding the value of the model’s field to that of the coordinating text field.
+最後に、従業員レコードを編集するために、フォームにデータをバインディングする設定を行います。バインディングは前の項で行ったビューモデルの updaterecordform の設定を利用します。レコードはビューモデルの Employee レコードの各キーと関連付けられます。各テキストフィールドに値をバインディングするために、Employee レコードの全てのフィールドを下記手順で利用します。
 
-  1. Select the First Name text field in the Project Inspector pane at Application > Views > UpdateRecordForm > MyTextField.
 
-  2. Search for the "bind" config and click the Edit button  Edit Config Button
+  1. Project Inspector 領域で「First Name」テキストフィールド（Application > Views > UpdateRecordForm > MyTextField）を選択して下さい。
 
-  3. In the Code view enter the value of: '{employee.firstName}' and click the "checkmark" button top-right of the code editor to commit the value
+  2. "bind" コンフィグを検索し「Edit」ボタンをクリックして下さい。
 
-  4. Select the Last Name text field (MyTextField1), search for the "bind" config, and set the value to: '{employee.lastName}'
+  3. コードビューが表示されるので、値に「'{employee.firstName}'」を入力し、チェックマークをクリックして変更を確定します。
 
-  5. Select the Employee Location text field (MyTextField2), search for the "bind" config, and set the value to: '{employee.officeLocation}'
+  4. 「Last Name」テキストフィールド（MyTextField1）を選択し、bind コンフィグを検索、値に「'{employee.lastName}'」を設定して下さい。
 
-  6. Select the Phone Number text field (MyTextField3), search for the "bind" config, and set the value to: '{employee.phoneNumber}'
+  5. 「Employee Location」テキストフィールド（MyTextField2）を選択し、bind コンフィグを検索、値に「'{employee.officeLocation}'」を設定して下さい。
 
-  7. Preview the app. When a grid row is clicked / tapped its record will be loaded to the popup form panel. Edits can now be made to the four field values with the Submit button committing the edit to the underlying record and Cancel discarding the edit.
+  6. 「Phone Number」テキストフィールド（MyTextField3）を選択し、bind コンフィグを検索、値に「'{employee.phoneNumber}'」を設定して下さい。
+
+  7. アプリをプレビューします。グリッドの行をクリック/タップするとポップアップフォーム内にレコードが読み込まれます。そして、4つのフィールドにレコードの値が表示され、「Submit」ボタンを押下することで現在表示中のレコードの変更を確定し、「Cancel」ボタンを押下することで変更を取り消すことができます。
+
+以上でチュートリアルは完了です。お疲れ様でした。
