@@ -22,11 +22,11 @@ Sencha Architectのチュートリアル「<a href="http://docs.sencha.com/archi
 
   2. Architect をインストールして起動して下さい。必要な場合、トライアル登録もしくは継続して下さい。
 
-  3. Architect の初期ダイアログで「New Project」をクリックします。
+  3. Architect の初期ダイアログで**「New Project」**をクリックします。
 
   4. 利用するフレームワークを選択します。「New Project」ウインドウの右上で「Ext JS 6.0.x Modern」を選んで下さい。
 
-  5. プロジェクトの雛形を選択します。「Blank Project」を選択し、「Blank Project」をクリックして下さい。これにより空のアプリケーションが作成されるので、そこにコンポーネントやロジックを追加して「従業員一覧」アプリを構築していきます。
+  5. プロジェクトの雛形を選択します。**「Blank Project」**を選択し、**「Create」**をクリックして下さい。これにより空のアプリケーションが作成されるので、そこにコンポーネントやロジックを追加して「従業員一覧」アプリを構築していきます。
 
 **ステップ 2: タブパネルを追加しプロジェクトを保存する**
 
@@ -36,17 +36,17 @@ Sencha Architectのチュートリアル「<a href="http://docs.sencha.com/archi
 
   2. ツールバーの左上にある「Save」ボタンをクリックし、表示されるメニューにある「Save」をクリックします。
 
-      1. 「Save Path」でプロジェクトを保存したい場所を指定して下さい。
+      1. **「Save Path」**でプロジェクトを保存したい場所を指定して下さい。
 
-      2. 「Project Name」にプロジェクト名を入力します。プロジェクト名は同時に上記で指定した場所に生成されるディレクトリ名となります。本チュートリアルでは「EmployeeDirectory」と入力して下さい。
+      2. **「Project Name」**にプロジェクト名を入力します。プロジェクト名は同時に上記で指定した場所に生成されるディレクトリ名となります。本チュートリアルでは「EmployeeDirectory」と入力して下さい。
 
-      3. 「App Name」にはアプリ名を入力します。この値はアプリケーションのそれぞれのクラスファイルで名前空間として利用されます。本チュートリアルでは「EmpDir」と入力して下さい。
+      3. **「App Name」**にはアプリ名を入力します。この値はアプリケーションのそれぞれのクラスファイルで名前空間として利用されます。本チュートリアルでは「EmpDir」と入力して下さい。
 
-      4. 「Save」ボタンをクリックして下さい。
+      4. **「Save」**ボタンをクリックして下さい。
 
       <pre><i class="fa fa-info-circle" aria-hidden="true"></i> 注記: 他のプロジェクト（もしくは他のCmdで作成されたワークスペース）のディレクトリにプロジェクトを保存しないようにして下さい。</pre>
 
-  3. 保存時に「Would you like to scan your project for references to the old application name?」のメッセージが出ますが、ここでは「No」をクリックして下さい。
+  3. 保存時に「Would you like to scan your project for references to the old application name?」のメッセージが出ますが、ここでは**「No」**をクリックして下さい。
 
   4. アプリケーションの作成過程をプレビューするには、"Preview App" ボタン <img src="/public/images/preview_app_button.png"/> をクリックします。保存ボタンの右側に配置されている「Preview button」をクリックして下さい。端末のデフォルトブラウザが起動し、アプリケーションの現在の画面が表示されます（デバイスのキャンバスにドラッグしたタブパネルが表示されます）。
 
@@ -54,31 +54,31 @@ Sencha Architectのチュートリアル「<a href="http://docs.sencha.com/archi
 
 この節ではアプリケーションの最終型で必要な画面だけを表示するようタブパネルを変更します。
 
-  1. Project Inspector 領域の MyTabPanel を選択します。
+  1. Project Inspector 領域の **MyTabPanel** を選択します。
 
-  2. Toolbox 領域の下側にある領域は Config 領域です。ここではアプリケーションに含まれるコンポーネントや他のクラスの設定を変更することができます。「Filter Configs...」でコンフィグ名を入力することで Config 領域のフィールドを絞り込みできます。
+  2. Toolbox 領域の下側にある領域は Config 領域です。ここではアプリケーションに含まれるコンポーネントや他のクラスの設定を変更することができます。「**Filter Configs...**」でコンフィグ名を入力することで Config 領域のフィールドを絞り込みできます。
 
-  3. userClassName コンフィグの値を「MyTabPanel」から「Main」に変更して下さい。
+  3. **userClassName** コンフィグの値を「MyTabPanel」から「Main」に変更して下さい。
 
-  4. Project Inspector 領域で Main コンポーネント配下にある Tab 2 コンポーネントの上で右クリック、「Delete」を選択して Tab 2を削除します。
+  4. Project Inspector 領域で **Main** コンポーネント配下にある **Tab 2** コンポーネントの上で右クリック、「Delete」を選択して **Tab 2**を削除します。
 
-  5. 続いて、Tab 3 も削除して下さい。
+  5. 続いて、**Tab 3** も削除して下さい。
 
   6. Toolbox 領域で "grid" と検索します。
 
-  7. Project Inspector 領域にて "Grid" コンポーネントのインスタンスを Tab 1 の上に追加し、Grid がタブパネルの最初のタブになるようにします（タブ名称は「New Tab」と表示されます）。
+  7. Project Inspector 領域にて "Grid" コンポーネントのインスタンスを **Tab 1** の上に追加し、Grid がタブパネルの最初のタブになるようにします（タブ名称は「New Tab」と表示されます）。
 
-  8. New Tab を選択し、config 領域で　"title" と検索して下さい。その後、title コンフィグの値を "Employee Directory" に変更します。
+  8. **New Tab** を選択し、config 領域で　"title" と検索して下さい。その後、title コンフィグの値を "Employee Directory" に変更します。
 
       - 代わりに、中央のデザイン領域のデバイスキャンバスにあるタブの文字をダブルクリックして新しいテキストやタイトルを直接入力して変更することも可能です。
 
-  9. "Employee Directory" タブにて、"iconCls" と入力し、絞り込み欄の右側にある「Add」をクリックして「iconCls」をカスタムコンフィグとして追加します。その後、「iconCls」の値に「x-fa fa-users」と入力して下さい。これによりタブにアイコン（Ext JS のテーマに含まれるアイコン集から取得）が追加されます。
+  9. "Employee Directory" タブにて、"iconCls" と入力し、絞り込み欄の右側にある「**Add**」をクリックして「iconCls」をカスタムコンフィグとして追加します。その後、「iconCls」の値に「x-fa fa-users」と入力して下さい。これによりタブにアイコン（Ext JS のテーマに含まれるアイコン集から取得）が追加されます。
 
-  10. Project Inspector 領域で Tab 2 を選択して下さい。その後、title を「About Sencha」に変更します。
+  10. Project Inspector 領域で **Tab 2** を選択して下さい。その後、title を「About Sencha」に変更します。
 
   11. "About Sencha" タブにて、"iconCls" カスタムコンフィグを追加し、値に「x-fa fa-info-circle」を設定して下さい。
 
-  12. プレビューボタンを押して、適用した更新を Architect の外で確認してみましょう。
+  12. **プレビュー**ボタンを押して、適用した更新を Architect の外で確認してみましょう。
 
       - もしプロジェクトを保存する前にプレビューボタンを押した場合は、保存を促すプロンプトが表示されます。
 
@@ -92,7 +92,7 @@ Sencha Architectのチュートリアル「<a href="http://docs.sencha.com/archi
 
   2. "About Sencha" タブに余白を追加します。 padding コンフィグを検索し、値に「10」を設定して下さい。
 
-  3. 保存をクリックします。
+  3. **保存**をクリックします。
 
   4. アプリケーションをプレビュー表示して確認下さい。
 
@@ -100,7 +100,7 @@ Sencha Architectのチュートリアル「<a href="http://docs.sencha.com/archi
 
 従業員一覧用のダミーデータを作成する前に、モデルを作成します。モデルはデータを表現するフィールドを持ち、グリッド等で利用されます。
 
-  1. Project Inspector 領域にて、「+」ボタンをクリックし、ドロップダウンメニューから「Model」を選択します。
+  1. Project Inspector 領域にて、「+」ボタンをクリックし、ドロップダウンメニューから「**Model**」を選択します。
 
   2. Config Panel 領域にて「name」と検索し、"userClassName" の値を "MyModel" から "Employee" に変更して下さい。
 
@@ -108,25 +108,25 @@ Sencha Architectのチュートリアル「<a href="http://docs.sencha.com/archi
 
   4. fields コンフィグの右端にある「+」ボタンをクリックします。
 
-  5. 「firstName, lastName, officeLocation, phoneNumber」と入力し、「Finish」をクリックして下さい。
+  5. 「firstName, lastName, officeLocation, phoneNumber」と入力し、「**Finish**」をクリックして下さい。
 
-  6. 保存をクリックします。
+  6. **保存**をクリックします。
 
 **ステップ 6: ストアの追加**
 
 続いて、従業員一覧ビューにデータを供給するためのデータストアをプロジェクトに追加します。Architectは従業員データが存在する場合にどのような表示・動作になるかを確認できるようモックデータを生成します。
 
-  1. Project Inspector 領域にて「+」ボタンをクリックし、ドロップダウンメニューから「Store」の「Json Store」を選択して下さい。
+  1. Project Inspector 領域にて「+」ボタンをクリックし、ドロップダウンメニューから「**Store**」の「**Json Store**」を選択して下さい。
 
   2. Config Panel 領域にて "name" と検索し、"userClassName" を "MyJsonStore" から "Employees" に変更して下さい。
 
-  3. Project Inspector 領域の Employees ストア上で右クリック、その後「Generate Mock Data」を選択します。
+  3. Project Inspector 領域の **Employees** ストア上で右クリック、その後「**Generate Mock Data**」を選択します。
 
-  4. モックデータ生成ウィンドウにて 対象モデルのフィールドを指定するために "Employee"を選択し、「Generate」ボタンをクリックして下さい。
+  4. モックデータ生成ウィンドウにて 対象モデルのフィールドを指定するために **Employee** を選択し、「**Generate**」ボタンをクリックして下さい。
 
       <pre><i class="fa fa-info-circle" aria-hidden="true"></i> 注記: もしモックデータを生成しない場合で、Employees ストアに Employee モデルを関連付けたい場合は、ストアの「model」コンフィグのドロップダウンオプションで「Employee」を選択して下さい。</pre>
 
-  5. 保存をクリックします。
+  5. **保存**をクリックします。
 
 **ステップ 7: 従業員一覧のグリッドを設定する**
 
@@ -134,7 +134,7 @@ Sencha Architectのチュートリアル「<a href="http://docs.sencha.com/archi
 
   1. Project Inspector 領域の Application > Views > Main 配下にある Employee Directory を選択します。
 
-  2. Config Panel にて "columns" と検索し、「String」カラム以外は各項目の隣になる「X」アイコンをクリックして全て削除して下さい。
+  2. Config Panel にて "columns" と検索し、「**String**」カラム以外は各項目の隣になる「X」アイコンをクリックして全て削除して下さい。
 
   3. Columns コンフィグで、行の「+」ボタンをクリックすると表示されるドロップダウンメニューから「Column」を選択して、2つのカラムを追加して下さい。
 
@@ -188,7 +188,7 @@ Sencha Architectのチュートリアル「<a href="http://docs.sencha.com/archi
 
   10. ツールバーを選択し "docked" コンフィグを検索します。その後、値の選択肢で「bottom」を設定して下さい、
 
-  11. 保存をクリックします。
+  11. **保存**をクリックします。
 
 **ステップ 10: フォームパネルへのボタンの追加**
 
@@ -200,43 +200,43 @@ Sencha Architectのチュートリアル「<a href="http://docs.sencha.com/archi
 
   3. "iconCls" コンフィグを検索し、値に「x-fa fa-check」を入力下さい。
 
-  4. "event" を検索し「+」ボタンをクリック、続いて「View Controller Event Bindings」を選択して下さい。
+  4. "event" を検索し「+」ボタンをクリック、続いて「**View Controller Event Bindings**」を選択して下さい。
 
-  5. "tap" と入力し「Finish」ボタンをクリックします。これにより、View Controller Event Bindings 配下に「onButtonTap tap」項目が追加されます。「onButtonTap」はメソッドの名称で、ボタンをタップした際に実行されます。
+  5. "tap" と入力し「**Finish**」ボタンをクリックします。これにより、**View Controller Event Bindings** 配下に「onButtonTap tap」項目が追加されます。「onButtonTap」はメソッドの名称で、ボタンをタップした際に実行されます。
 
-  6. onButtonTap 項目にある「->」ボタンをクリックします。その後、"fn" コンフィグの値を「onButtonTap」から「submitUpdate」に変更します。これにより「submitUpdate」メソッドが Update Form の View Controller に追加されます。
+  6. onButtonTap 項目にある「->」ボタンをクリックします。その後、"fn" コンフィグの値を「onButtonTap」から「**submitUpdate**」に変更します。これにより「submitUpdate」メソッドが Update Form の View Controller に追加されます。
 
-  7. Project Inspector 領域にて UpdateRecordFormViewController 配下にある submitUpdate 項目をダブルクリックして下さい。この操作により、submitUpdate メソッドのコードビューが表示されます（注記: メイン領域のデザインビューがコードビューに切り替わります）。submitUpdate メソッドに下記のコードを記述して下さい。
+  7. Project Inspector 領域にて **UpdateRecordFormViewController** 配下にある submitUpdate 項目をダブルクリックして下さい。この操作により、submitUpdate メソッドのコードビューが表示されます（**注記: メイン領域のデザインビューがコードビューに切り替わります**）。submitUpdate メソッドに下記のコードを記述して下さい。
 
          var view = this.getView(),
              record = view.getRecord();
          view.destroy();
          record.commit();
 
-  8. 右上の "checkmark" ボタンをクリックして変更を確定します。
+  8. 右上のチェックマークボタンをクリックして変更を確定します。
 
-  9. 中央領域の右上にある切替ボタンを押下してデザインビューに戻って下さい。
+  9. 中央領域の右上にある切替ボタン「**Design**」を押下してデザインビューに戻って下さい。
 
-  10. 新しく Button インスタンスをdラッグして、デバイスキャンバス上のツールバーにドロップして下さい。
+  10. 新しく Button インスタンスをドラッグして、デバイスキャンバス上のツールバーにドロップして下さい。
 
   11. "text" コンフィグを検索し、値を「MyButton1」から「Cancel」に変更して下さい。
 
   12. "iconCls" コンフィグを検索し、値に「x-fa fa-close」を設定して下さい。
 
-  13. "event" を検索し「+」ボタンをクリック、続いて「View Controller Event Bindings」を選択して下さい。
+  13. "event" を検索し「+」ボタンをクリック、続いて「**View Controller Event Bindings**」を選択して下さい。
 
-  14. "tap" と入力し、「Finish」ボタンをクリックして下さい。
+  14. "tap" と入力し、「**Finish**」ボタンをクリックして下さい。
 
-  15. onButtonTap 項目にある「->」ボタンをクリックします。その後、"fn" コンフィグの値を「onButtonTap」から「cancelUpdate」に変更します。
+  15. onButtonTap 項目にある「->」ボタンをクリックします。その後、"fn" コンフィグの値を「onButtonTap」から「**cancelUpdate**」に変更します。
 
-  16. Project Inspector 領域にて UpdateRecordFormViewController 配下にある cancelUpdate 項目をダブルクリックして下さい。その後、cancelUpdate メソッドに下記のコードを記述します。
+  16. Project Inspector 領域にて **UpdateRecordFormViewController** 配下にある cancelUpdate 項目をダブルクリックして下さい。その後、cancelUpdate メソッドに下記のコードを記述します。
 
           var view = this.getView(),
               record = view.getRecord();
           view.destroy();
           record.reject();
 
-  17. 右上の "checkmark" ボタンをクリックして変更を確定します。
+  17. 右上のチェックマークボタンをクリックして変更を確定します。
 
   18. 保存をクリックします。
 
@@ -244,15 +244,15 @@ Sencha Architectのチュートリアル「<a href="http://docs.sencha.com/archi
 
 続いて、グリッドの行にクリックもしくはタップされた際に実行する Update Record フォームを表示するためのロジックを追加します。
 
-  1. Project Inspector 領域にて　Employee Directory (Application > Views > Main > Employee Directory) をクリックして下さい。
+  1. Project Inspector 領域にて　**Employee Directory** (Application > Views > Main > Employee Directory) をクリックして下さい。
 
-  2. "event" を検索し「+」ボタンをクリック、続いて「View Controller Event Bindings」を選択して下さい。
+  2. "event" を検索し「+」ボタンをクリック、続いて「**View Controller Event Bindings**」を選択して下さい。
 
-  3. "itemtap" と入力し、「Finish」ボタンをクリックして下さい。
+  3. "itemtap" と入力し、「**Finish**」ボタンをクリックして下さい。
 
-  4. onGridItemTap 項目にある「->」ボタンをクリックします。その後、"fn" コンフィグの値を「onGridItemTap」から「onPopupForm」に変更します。
+  4. onGridItemTap 項目にある「->」ボタンをクリックします。その後、"fn" コンフィグの値を「onGridItemTap」から「**onPopupForm**」に変更します。
 
-  5. Project Inspector 領域にて MyTabPanelViewController 配下にある onPopupForm 項目をダブルクリックして下さい。その後、onPopupForm メソッドに下記のコードを記述します。
+  5. Project Inspector 領域にて **MyTabPanelViewController** 配下にある onPopupForm 項目をダブルクリックして下さい。その後、onPopupForm メソッドに下記のコードを記述します。
 
          Ext.Viewport.add({
              xtype: 'updaterecordform',
@@ -271,12 +271,12 @@ Sencha Architectのチュートリアル「<a href="http://docs.sencha.com/archi
 
 **ステップ 12: フォームへのデータのバインディング**
 
-最後に、従業員レコードを編集するために、フォームにデータをバインディングする設定を行います。バインディングは前の項で行ったビューモデルの updaterecordform の設定を利用します。レコードはビューモデルの Employee レコードの各キーと関連付けられます。各テキストフィールドに値をバインディングするために、Employee レコードの全てのフィールドを下記手順で利用します。
+最後に、従業員レコードを編集するために、フォームにデータをバインディングする設定を行います。バインディングは前の項で行ったビューモデルの **updaterecordform** の設定を利用します。レコードはビューモデルの Employee レコードの各キーと関連付けられます。各テキストフィールドに値をバインディングするために、Employee レコードの全てのフィールドを下記手順で利用します。
 
 
   1. Project Inspector 領域で「First Name」テキストフィールド（Application > Views > UpdateRecordForm > MyTextField）を選択して下さい。
 
-  2. "bind" コンフィグを検索し「Edit」ボタンをクリックして下さい。
+  2. "bind" コンフィグを検索し「**Edit**」ボタン <img src="/public/images/edit-config-button.png"/>  をクリックして下さい。
 
   3. コードビューが表示されるので、値に「'{employee.firstName}'」を入力し、チェックマークをクリックして変更を確定します。
 
