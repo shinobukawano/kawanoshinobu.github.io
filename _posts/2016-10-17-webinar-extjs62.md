@@ -1,12 +1,12 @@
 ---
 layout: post
-title: "Sencha Webinar「Ext JS 6.2 新機能のご紹介」"
+title: "Ext JS 6.2 新機能のご紹介 - Sencha Webinar"
 categories: [sencha, extjs]
 css: jp-post
 ogimage: extjs62-webinar
 ---
 
-来週、10月25日（火）18時よりSenchaのWebinar（Webセミナー）を開催します。Ext JSの最新機能を学ぶ絶好の機会かと思います。皆様のご参加をお待ちしています！
+10月25日（火）18時よりSenchaのWebinar（Webセミナー）を開催します。セミナーではExt JSの最新機能を日本語でお伝えしたいと思います。皆様のご参加をお待ちしています！
 
 <a href="https://www.brighttalk.com/webcast/11505/200015">https://www.brighttalk.com/webcast/11505/200015</a>
 
