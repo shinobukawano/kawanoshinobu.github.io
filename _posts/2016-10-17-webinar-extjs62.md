@@ -6,7 +6,7 @@ css: jp-post
 ogimage: extjs62-webinar
 ---
 
-来週、10月25日（火）18時よりSenchaのWebinar（Webセミナー）を開催します。Ext JSの最新機能を学ぶ絶好の機会かと思います。皆様のご参加をお待ちしてます！
+来週、10月25日（火）18時よりSenchaのWebinar（Webセミナー）を開催します。Ext JSの最新機能を学ぶ絶好の機会かと思います。皆様のご参加をお待ちしています！
 
 <a href="https://www.brighttalk.com/webcast/11505/200015">https://www.brighttalk.com/webcast/11505/200015</a>
 
@@ -37,4 +37,4 @@ Ext JS 6.2、Themer 1.0、Architect 4.0を利用して、洗練された外観�
 
 尚、本Webinarは録画を予定しております。もし当日都合がつかない場合は、後ほど収録されたセミナーをご視聴頂けますと幸いです。
 
-参加のご登録は <a href="https://www.brighttalk.com/webcast/11505/200015">https://www.brighttalk.com/webcast/11505/200015</a> よりお申し込み下さい。皆様のご参加をお待ちしてます！
+Webinarの参加は <a href="https://www.brighttalk.com/webcast/11505/200015">https://www.brighttalk.com/webcast/11505/200015</a> よりお申し込み下さい。皆様のご参加を心よりお待ちしています。
