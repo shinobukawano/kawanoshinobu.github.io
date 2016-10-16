@@ -100,6 +100,8 @@ Sencha Architectのチュートリアル「<a href="http://docs.sencha.com/archi
 
   4. アプリケーションをプレビュー表示して確認下さい。
 
+      <pre><i class="fa fa-medkit" aria-hidden="true"></i> 訳注: ページをスクロール可能にするためにはパネルの「scrollable」コンフィグを利用します</pre>
+
 **Step 5: モデルの追加**
 
 従業員一覧用のダミーデータを作成する前に、モデルを作成します。モデルはデータを表現するフィールドを持ち、グリッド等で利用されます。
