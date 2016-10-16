@@ -3,7 +3,7 @@ layout: post
 title: "Sencha Webinar「Ext JS 6.2 新機能のご紹介」"
 categories: [sencha, extjs]
 css: jp-post
-ogimage: modern-employee-directory-parts
+ogimage: extjs62-webinar
 ---
 
 来週、10月25日（火）18時より下記内容でSenchaのWebinar（Webセミナー）を開催します。
