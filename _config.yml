@@ -18,7 +18,7 @@ description: > #
 
 url: http://shinobukawano.com
 baseurl: '/'
-paginate: 5
+paginate: 10
 
 author:
   name: 'Shinobu Kawano'
